@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class RubyOnRails extends Component {
+class StepCreate extends Component {
     render() {
         return (
             <div>
-                <h1>Ruby On Rails Home</h1>
+               Steps Create 
             </div>
         );
     }
 }
 
-export default RubyOnRails;
+export default StepCreate;
