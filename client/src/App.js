@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
+import Header from './components/BoilerPlate/Header'
 import Nav from './components/BoilerPlate/Nav'
 import HomePage from './components/Home/HomePage'
 import CatHome from './components/Category/CatHome'
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Header />
           <Nav />
        
         <Switch>

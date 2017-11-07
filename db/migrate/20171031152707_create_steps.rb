@@ -4,7 +4,8 @@ class CreateSteps < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :body
       t.string :links
-
+    
+      
       t.timestamps
     end
   end
