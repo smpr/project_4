@@ -30,7 +30,7 @@ class StepHome extends Component {
                     <div><a href={this.state.info.links}>{this.state.info.links}</a></div>
                 </div>
                 <div>
-                    <div><a href="/Categories/1/WalkThroughs/2/steps/create">Add a Step</a></div>
+                    <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}>Add a Step</Link></div>
                     <ol>{this.state.steps.map((step, index) => {
                     return (
                         <li><Link key={step._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${step.id}`}>{step.title}
