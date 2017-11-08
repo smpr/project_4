@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107195112) do
+ActiveRecord::Schema.define(version: 20171108015310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20171107195112) do
     t.string "title"
     t.string "body"
     t.string "links"
+    t.bigint "walkthrough_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "walkthroughs_id"
-    t.index ["walkthroughs_id"], name: "index_steps_on_walkthroughs_id"
+    t.index ["walkthrough_id"], name: "index_steps_on_walkthrough_id"
   end
 
   create_table "walkthroughs", force: :cascade do |t|
@@ -41,6 +41,6 @@ ActiveRecord::Schema.define(version: 20171107195112) do
     t.index ["category_id"], name: "index_walkthroughs_on_category_id"
   end
 
-  add_foreign_key "steps", "walkthroughs", column: "walkthroughs_id"
+  add_foreign_key "steps", "walkthroughs"
   add_foreign_key "walkthroughs", "categories"
 end

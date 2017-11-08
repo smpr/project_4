@@ -12,10 +12,10 @@ class Api::WalkthroughsController < ApplicationController
         @category = Category.find params[:category_id]
         @category.walkthroughs.create(walkthrough_params)
         # @new_walkthrough = Walkthrough.create!(walkthrough_params)
-       puts @category
+       
         # @new_walkthrough.save
        puts "File saved"
-       render json: @new_walkthrough
+
       end
     
       private

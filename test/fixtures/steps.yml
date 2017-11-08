@@ -4,8 +4,10 @@ one:
   title: MyString
   body: MyString
   links: MyString
+  walkthroughs: one
 
 two:
   title: MyString
   body: MyString
   links: MyString
+  walkthroughs: two

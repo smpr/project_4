@@ -4,8 +4,8 @@ class CreateSteps < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :body
       t.string :links
-    
-      
+      t.references :walkthrough, foreign_key: true
+
       t.timestamps
     end
   end

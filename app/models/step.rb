@@ -1,3 +1,3 @@
 class Step < ApplicationRecord
-    belongs_to :walkthrough
+  belongs_to :walkthrough
 end

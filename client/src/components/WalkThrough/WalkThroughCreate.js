@@ -29,12 +29,12 @@ class WalkThroughCreate extends Component {
     
        const res = await axios.post(`/api/categories/${catId}/walkthroughs`, { 'walkthrough': this.state.walkthrough })
      
-        // this.setState({ redirectToHome: true, walkId: res.data._id })
+         this.setState({ redirectToHome: true})
 
     }
     render() {
         if (this.state.redirectToHome) {
-            return <Redirect to={`/categories/${this.state.userId}/walkthroughs`} />
+            return <Redirect to={`/categories/${this.props.match.params.categoryId}/walkthroughs`} />
           }
         return (
             <div>

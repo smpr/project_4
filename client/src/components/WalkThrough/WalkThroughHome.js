@@ -26,7 +26,7 @@ class WalkThroughHome extends Component {
                 <div>
                  {this.state.walkthroughs.map((walkthrough, index) => {
                     return (
-                        <div><Link key={walkthrough._id} to={`/Categories/${walkthrough.id}/WalkThroughs`}>{walkthrough.name}
+                        <div><Link key={walkthrough._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${walkthrough.id}/steps`}>{walkthrough.name}
                         </Link></div>
                     
                     )
