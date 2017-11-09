@@ -24,6 +24,13 @@ class Api::StepsController < ApplicationController
         # render json: @city, include: [:posts]
         puts "Update hit"
       end
+      def destroy
+        @step = Step.find(params[:id])
+        @step.destroy 
+        puts @step
+        render json: @step
+
+      end
       private
       
           def steps_params

@@ -9,7 +9,8 @@ class StepEdit extends Component {
             body: '',
             links: ''
         },
-        redirectToSteps: false
+        redirectToSteps: false,
+        redirectToWalkthrough: false,
     }
     async componentWillMount() {
         try {
@@ -43,12 +44,21 @@ class StepEdit extends Component {
         clonedStep[attribute] = event.target.value
         this.setState({ step: clonedStep })
     }
-    deleteStep = () => {
+    deleteStep = async () => {
+        const catId = this.props.match.params.categoryId
+        const walkId = this.props.match.params.walkthroughId
+        const stepId = this.props.match.params.stepId
+    const res = await axios.delete(`/api/categories/${catId}/walkthroughs/${walkId}/steps/${stepId}`)
+    //redirect back to the user page after the id has been deleted
+    this.setState({ redirectToWalkthrough: true })
 
     }
     render() {
         if (this.state.redirectToSteps) {
             return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${this.props.match.params.stepId}/show`} />
+          }
+          if (this.state.redirectToWalkthroughs) {
+            return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`} />
           }
         return (
             <div>

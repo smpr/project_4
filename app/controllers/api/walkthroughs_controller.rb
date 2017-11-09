@@ -17,7 +17,10 @@ class Api::WalkthroughsController < ApplicationController
        puts "File saved"
 
       end
-      
+      def destroy
+        @step = Step.find(params[:step_id]).delete
+
+      end
     
       private
       
