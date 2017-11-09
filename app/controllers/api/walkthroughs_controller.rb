@@ -18,7 +18,7 @@ class Api::WalkthroughsController < ApplicationController
 
       end
       def destroy
-        @step = Step.find(params[:step_id]).delete
+        @walkthrough =Walkthrough.find(params[:walkthrough_id]).delete
 
       end
     

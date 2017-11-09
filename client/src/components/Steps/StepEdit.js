@@ -57,7 +57,7 @@ class StepEdit extends Component {
         if (this.state.redirectToSteps) {
             return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${this.props.match.params.stepId}/show`} />
           }
-          if (this.state.redirectToWalkthroughs) {
+          else if (this.state.redirectToWalkthrough) {
             return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`} />
           }
         return (
