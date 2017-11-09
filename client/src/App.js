@@ -11,6 +11,7 @@ import CatCreate from './components/Category/CatCreate'
 
 import WalkHome from './components/WalkThrough/WalkThroughHome'
 import WalkCreate from './components/WalkThrough/WalkThroughCreate'
+import WalkEdit from './components/WalkThrough/WalkThroughEdit'
 
 import StepsHome from './components/Steps/StepHome.js'
 import StepsCreate from './components/Steps/StepCreate.js'
@@ -24,18 +25,20 @@ class App extends Component {
         <div>
           <Header />
           <Nav />
-       
-        <Switch>
-        <Route exact path="/" component={CatHome} />
-        <Route exact path="/Create" component={CatCreate} />
-        <Route exact path="/Categories/:categoryId/WalkThroughs" component={WalkHome} /> 
-        <Route exact path="/Categories/:categoryId/WalkThroughs/Create" component={WalkCreate} />       
-        <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps" component={StepsHome} />
-        
-        <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/Create" component={StepsCreate} />
-        <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/Edit" component={StepsEdit} />
-        <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/show" component={StepsShow} />
-        </Switch>
+
+          <Switch>
+            <Route exact path="/" component={CatHome} />
+            <Route exact path="/Create" component={CatCreate} />
+
+            <Route exact path="/Categories/:categoryId/WalkThroughs" component={WalkHome} />
+            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Edit" component={WalkEdit} />
+            <Route exact path="/Categories/:categoryId/WalkThroughs/Create" component={WalkCreate} />
+
+            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps" component={StepsHome} />
+            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/Create" component={StepsCreate} />
+            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/Edit" component={StepsEdit} />
+            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/show" component={StepsShow} />
+          </Switch>
         </div>
       </Router>
     );

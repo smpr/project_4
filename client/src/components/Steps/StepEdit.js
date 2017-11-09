@@ -63,15 +63,15 @@ class StepEdit extends Component {
         return (
             <div>
                 <br />
-                <h2><b>Edit User</b></h2>
+                <h2><b>Edit Step</b></h2>
                 <br />
-                First Name: <input onChange={this.handleChange} name="title" value={this.state.step.title} />
+                Title: <input onChange={this.handleChange} name="title" value={this.state.step.title} />
 
                 <div>
-                    Last Name: <input onChange={this.handleChange} name="body" value={this.state.step.body} />
+                    Description: <input onChange={this.handleChange} name="body" value={this.state.step.body} />
                 </div>
                 <div>
-                    Email:<input onChange={this.handleChange} name="links" value={this.state.step.links} />
+                    Links:<input onChange={this.handleChange} name="links" value={this.state.step.links} />
                 </div>
                 <button onClick={this.deleteStep}>Delete</button>
                 <button onClick={this.editStep}>Edit</button>

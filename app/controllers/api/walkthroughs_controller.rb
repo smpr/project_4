@@ -9,13 +9,20 @@ class Api::WalkthroughsController < ApplicationController
         render json: @Walkthrough
     end
     def create
-        @category = Category.find params[:category_id]
-        @category.walkthroughs.create(walkthrough_params)
+        @walkthrough = Category.find params[:category_id]
+        @walkthrough.walkthroughs.create(walkthrough_params)
         # @new_walkthrough = Walkthrough.create!(walkthrough_params)
        
         # @new_walkthrough.save
        puts "File saved"
 
+      end
+      def update
+        @walkthrough = Walkthrough.find(params[:id])
+        @walkthrough.update!(walkthrough_params)
+        # @city = City.includes(:posts).order('posts.created_at Desc').find(params[:city_id])
+        # render json: @city, include: [:posts]
+        puts "Update hit"
       end
       def destroy
         @walkthrough =Walkthrough.find(params[:walkthrough_id]).delete

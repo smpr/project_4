@@ -5,8 +5,8 @@ import styled from 'styled-components'
 
 const Container = styled.div`
 display: flex;
-flex-direction: column;
-justify-content: center;
+flex-direction: row;
+justify-content: space-around;
 align-content: center;
 `
 class StepHome extends Component {
@@ -35,11 +35,12 @@ class StepHome extends Component {
                 <div>
                     <div><b>{this.state.info.name}</b></div>
                     <div><b>Description:</b> {this.state.info.body}</div>
-                    <div><a href={this.state.info.links}>{this.state.info.links}</a></div>
+                    <div><b>Helpful Links:</b><a href={this.state.info.links}>{this.state.info.links}</a></div>
+                    <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}><button>Edit</button></Link></div>
                 </div>
                 <div>
                     <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}>Add a Step</Link></div>
-                    <ol>{this.state.steps.map((step, index) => {
+                    <ol><b><h2>Steps:</h2></b>{this.state.steps.map((step, index) => {
                     return (
                         <li><Link key={step._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${step.id}/show`}>{step.title}
                         </Link></li>
