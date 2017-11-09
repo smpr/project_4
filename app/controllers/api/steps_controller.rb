@@ -13,7 +13,17 @@ class Api::StepsController < ApplicationController
        puts "File saved"
 
       end
-
+      def show
+        @step = Step.find(params[:id])
+        render json: @step
+    end
+    def update
+        @step = Step.find(params[:id])
+        @step.update!(steps_params)
+        # @city = City.includes(:posts).order('posts.created_at Desc').find(params[:city_id])
+        # render json: @city, include: [:posts]
+        puts "Update hit"
+      end
       private
       
           def steps_params

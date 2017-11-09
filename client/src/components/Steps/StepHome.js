@@ -21,6 +21,7 @@ class StepHome extends Component {
         }
 
     }
+    
     render() {
         return (
             <div>
@@ -33,7 +34,7 @@ class StepHome extends Component {
                     <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}>Add a Step</Link></div>
                     <ol>{this.state.steps.map((step, index) => {
                     return (
-                        <li><Link key={step._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${step.id}`}>{step.title}
+                        <li><Link key={step._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${step.id}/show`}>{step.title}
                         </Link></li>
                     
                     )
