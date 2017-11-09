@@ -54,7 +54,7 @@ class StepCreate extends Component {
                             onChange={this.handleChange}
                             name="links"
                             type="text"
-                            required
+                            
                            
                             value={this.state.step.links} />
                         <div>

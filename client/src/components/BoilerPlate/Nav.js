@@ -5,7 +5,7 @@ class Nav extends Component {
     render() {
         return (
             <div>
-                <Link to="/categories">Home </Link>
+                <Link to="/"><button>Home</button></Link>
             </div>
         );
     }

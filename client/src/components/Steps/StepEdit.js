@@ -73,7 +73,7 @@ class StepEdit extends Component {
                 <div>
                     Email:<input onChange={this.handleChange} name="links" value={this.state.step.links} />
                 </div>
-                <button onClick={this.deleteStep}>Delete User</button>
+                <button onClick={this.deleteStep}>Delete</button>
                 <button onClick={this.editStep}>Edit</button>
             </div>
         );

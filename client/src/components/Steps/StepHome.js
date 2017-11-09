@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components'
 
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+`
 class StepHome extends Component {
     state = {
         info: [],
@@ -24,7 +31,7 @@ class StepHome extends Component {
     
     render() {
         return (
-            <div>
+            <Container>
                 <div>
                     <div><b>{this.state.info.name}</b></div>
                     <div><b>Description:</b> {this.state.info.body}</div>
@@ -41,7 +48,7 @@ class StepHome extends Component {
                 })} </ol>
                 </div>
                
-            </div>
+            </Container>
         );
     }
 }

@@ -4,13 +4,16 @@ import axios from 'axios'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 const Container = styled.div`
-display: flex,
-justify-content: center,
-
+display: flex;
+justify-content: center;
+align-content: center;
+flex-direction: column;
 `
 const CatList = styled.div`
-display: flex,
-flex-direction: row,
+display: flex;
+
+justify-content: center;
+align-content: center;
 `
 
 class CatHome extends Component {
@@ -31,15 +34,22 @@ class CatHome extends Component {
     render() {
         return (
             <Container>
-                <Link to="/create">Create New Category</Link><br />
+                
                 <CatList>
+                    <div>
+                    <div> Please Select a Category</div>
+                    <div><Link to="/create"><button>Create New Category</button></Link></div>
+                
+                <ul>
                 {this.state.categories.map((category, index) => {
                     return (
-                        <div><Link key={category._id} to={`/Categories/${category.id}/WalkThroughs`}>{category.title}
-                        </Link></div>
+                        <div><li><Link key={category._id} to={`/Categories/${category.id}/WalkThroughs`}>{category.title}
+                        </Link></li></div>
 
                     )
                 })}
+                </ul>
+                </div>
                 </CatList>
                 Category home
             </Container>
