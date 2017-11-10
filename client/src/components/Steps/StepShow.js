@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
+const BodyContainer = styled.div`
+display:flex;
+justify-content: space-around;
+`
+
 const Container = styled.div`
 display: flex;
 flex-direction: column;

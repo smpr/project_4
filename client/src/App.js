@@ -6,6 +6,9 @@ import Header from './components/BoilerPlate/Header'
 import Nav from './components/BoilerPlate/Nav'
 import HomePage from './components/Home/HomePage'
 
+import MeetUps from './components/Meetup/Meetups'
+import MeetDetails from './components/Meetup/MeetupDetails'
+
 import CatHome from './components/Category/CatHome'
 import CatCreate from './components/Category/CatCreate'
 
@@ -29,6 +32,11 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={CatHome} />
             <Route exact path="/Create" component={CatCreate} />
+
+            <Route exact path="/Users/:userId/Meetups" component={MeetUps} />
+            <Route exact path="/Users/:userId/Meetups/:meetId/MeetupDetails" component={MeetDetails} />
+
+
 
             <Route exact path="/Categories/:categoryId/WalkThroughs" component={WalkHome} />
             <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Edit" component={WalkEdit} />
