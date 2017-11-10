@@ -31,14 +31,14 @@ class App extends Component {
     try {
       const signedIn = userIsLoggedIn()
 
-      let posts = []
+      let categories = []
       if (signedIn) {
         setAxiosDefaults()
-        posts = await this.getPosts()
+        categories = await this.getCategories()
       }
 
       this.setState({
-        posts,
+        categories,
         signedIn,
       })
     } catch (error) {
@@ -74,7 +74,7 @@ class App extends Component {
       saveAuthTokens(response.headers)
 
       // make this get categories
-       const categories = await this.getCategories()
+      const categories = await this.getCategories()
 
 
       this.setState({
@@ -101,13 +101,13 @@ class App extends Component {
   }
   getCategories = async () => {
     try {
-        const response = await axios.get('/api/categories')
-        return response.data
+      const response = await axios.get('/api/categories')
+      return response.data
     } catch (error) {
-        console.log(error)
-        return []
+      console.log(error)
+      return []
     }
-}
+  }
   render() {
     const SignUpLogInComponent = () => (
       <HomePage
@@ -123,7 +123,7 @@ class App extends Component {
           {this.state.signedIn ? null : <Redirect to="/Categories" />}
           <Switch>
             <Route exact path="/" render={SignUpLogInComponent} />
-            <Route exact path="/Create" component={CatCreate} />
+           
 
             <Route exact path="/Users/:userId/Meetups" component={MeetUps} />
             <Route exact path="/Users/:userId/Meetups/:meetId/MeetupDetails" component={MeetDetails} />
