@@ -7,12 +7,23 @@ const BodyContainer = styled.div`
 display:flex;
 justify-content: space-around;
 `
-
 const Container = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: space-around;
 align-content: center;
+`
+const StepInfo = styled.div`
+width: 300px;
+height: 300px;
+background-color: red;
+`
+const StepList = styled.div`
+`
+const StepDescription = styled.div`
+width: 300px;
+height: 300px;
+background-color: blue;
 `
 class StepShow extends Component {
     state = {
@@ -34,15 +45,19 @@ class StepShow extends Component {
     }
     render() {
         return (
-            <Container>
-                <div>
-                    <div><b>Step:</b>{this.state.step.title}</div>
-                    <div><b>Description:</b>{this.state.step.body}</div>
+            <BodyContainer>
+                <Container>
+                
+                    <StepInfo><b>Step:</b>{this.state.step.title}</StepInfo>
                     <div><b>Helpful Links:</b><a href={this.state.step.links}>{this.state.step.links}</a></div>
                     <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${this.props.match.params.stepId}/edit`}><button>Edit</button></Link>
                     <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`}><button>Back</button></Link></div>
-                </div>
-            </Container>
+                    </Container>
+                    <Container>
+                    <StepDescription><b>Description:</b>{this.state.step.body}</StepDescription>
+                    
+                </Container>
+            </BodyContainer>
         );
     }
 }
