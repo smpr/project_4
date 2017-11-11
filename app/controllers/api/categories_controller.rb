@@ -33,7 +33,7 @@ class Api::CategoriesController < ApplicationController
         @category = Category.find(params[:id])
     
     
-        if @pcategory.update(category_params)
+        if @category.update(category_params)
           render json: @category
         else
           render json: @category.errors, status: :unprocessable_entity
