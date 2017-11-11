@@ -28,7 +28,7 @@ class CatCreate extends Component {
     render() {
         
         if (this.state.redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to="/categories" />
         }
         return (
             <div>

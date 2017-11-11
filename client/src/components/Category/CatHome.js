@@ -38,7 +38,7 @@ class CatHome extends Component {
                 <CatList>
                     <div>
                     <div> Please Select a Category</div>
-                    <div><Link to="/create"><button>Create New Category</button></Link></div>
+                    <div><Link to="/categories/create"><button>Create New Category</button></Link></div>
                 
                 <ul>
                 {this.state.categories.map((category, index) => {

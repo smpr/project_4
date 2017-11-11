@@ -5,10 +5,7 @@ class Api::CategoriesController < ApplicationController
     
         render json: @categories
       end
-    # def index
-    #     @categories = current_user.categories
-    #     render json: @categories
-    # end
+
     def show
         @category = Category.find(params[:id])
         render json: @category
@@ -18,10 +15,11 @@ class Api::CategoriesController < ApplicationController
     # end
     def create
         @user = current_user
-        @category = @user.category.build(category_params)
+        @category = @user.categories.new(category_params)
+        
     
-        if @user.save
-          render json: @category, status: :created, location: @category
+        if @category.save
+          render json: @category, status: :created
         else
           render json: @category.errors, status: :unprocessable_entity
         end
