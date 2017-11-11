@@ -25,7 +25,8 @@ class Api::WalkthroughsController < ApplicationController
         puts "Update hit"
       end
       def destroy
-        @walkthrough =Walkthrough.find(params[:walkthrough_id]).delete
+        @walkthrough =Walkthrough.find(params[:id]).destroy
+        puts @walkthrough
 
       end
     
