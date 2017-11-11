@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import { Redirect } from 'react-router-dom'
 class SignUpLogIn extends Component {
 
     state = {
@@ -30,10 +30,10 @@ class SignUpLogIn extends Component {
         newState[event.target.name] = event.target.value
         this.setState(newState)
     }
-
+    // {this.state.signedIn ? null : <Redirect to="/Categories" />}
     render() {
         return (
-            <div>
+            <div> 
                 <form>
                     <div>
                         <label htmlFor="email">E-mail: </label>

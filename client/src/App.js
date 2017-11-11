@@ -122,7 +122,7 @@ class App extends Component {
         <div>
           <Header />
           <Nav />
-          {this.state.signedIn ? null : <Redirect to="/Categories" />}
+          
           <Switch>
             <Route exact path="/" render={SignUpLogInComponent} />
            
