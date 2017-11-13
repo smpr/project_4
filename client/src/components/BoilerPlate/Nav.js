@@ -15,6 +15,7 @@ class Nav extends Component {
                 </div>
                 <div>
                     <Link to='/Users/Home'><button>User Home</button></Link>
+                    <button onClick={this.props.signOut}>Sign Out</button>
                 </div>
             </BodyContainer>
         );

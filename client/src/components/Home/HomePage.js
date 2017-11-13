@@ -56,7 +56,7 @@ class SignUpLogIn extends Component {
 
                     <button onClick={this.signUp}>Sign Up</button>
                     <button onClick={this.signIn}>Log In</button>
-                    <button onClick={this.signOut}>Sign Out</button>
+                    
 
                 </form>
             </div>

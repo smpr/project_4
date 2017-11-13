@@ -96,6 +96,7 @@ class App extends Component {
       await axios.delete('/auth/sign_out')
 
       clearAuthTokens();
+      console.log("sign out")
 
       this.setState({ signedIn: false })
     } catch (error) {
@@ -118,19 +119,22 @@ class App extends Component {
         signIn={this.signIn}
         signOut={this.signOut} />
     )
+
     return (
       <Router>
         <div>
           <Header />
-          <Nav />
-
+          <Nav 
+          signOut={this.signOut}
+          /> 
+          
           <Switch>
-          <Route exact path="/" render={SignUpLogInComponent} />
+            <Route exact path="/" render={SignUpLogInComponent} />
             <Route exact path="/signup" render={SignUpLogInComponent} />
             <Route exact path="/Users/create" component={UserCreate} />
             <Route exact path="/Users/Home" component={UserHome} />
             <Route exact path="/Users/Edit" component={UserEdit} />
-           
+
             <Route exact path="/Users/Meetups" component={MeetUps} />
             <Route exact path="/Users/Meetups/:meetId/MeetupDetails" component={MeetDetails} />
 
