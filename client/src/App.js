@@ -123,9 +123,10 @@ class App extends Component {
         <div>
           <Header />
           <Nav />
-          
+
           <Switch>
-            <Route exact path="/" render={SignUpLogInComponent} />
+          <Route exact path="/" render={SignUpLogInComponent} />
+            <Route exact path="/signup" render={SignUpLogInComponent} />
             <Route exact path="/Users/create" component={UserCreate} />
             <Route exact path="/Users/Home" component={UserHome} />
             <Route exact path="/Users/Edit" component={UserEdit} />

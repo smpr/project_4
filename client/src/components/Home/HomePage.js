@@ -5,7 +5,8 @@ class SignUpLogIn extends Component {
     state = {
         email: '',
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
+        redirectToCategoryPage: false
     }
 
     signUp = (event) => {
@@ -23,6 +24,7 @@ class SignUpLogIn extends Component {
             this.state.email,
             this.state.password
         )
+        this.setState({ redirectToCategoryPage: true })
     }
 
     handleChange = (event) => {
@@ -30,8 +32,11 @@ class SignUpLogIn extends Component {
         newState[event.target.name] = event.target.value
         this.setState(newState)
     }
-    // {this.state.signedIn ? null : <Redirect to="/Categories" />}
+     
     render() {
+        if (this.state.redirectToCategoryPage) {
+            return <Redirect to={`/Categories`} />
+          }
         return (
             <div> 
                 <form>
