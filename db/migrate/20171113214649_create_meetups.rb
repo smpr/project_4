@@ -9,7 +9,7 @@ class CreateMeetups < ActiveRecord::Migration[5.1]
       t.string :description
       t.float :lat
       t.float :lon
-
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end

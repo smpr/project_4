@@ -1,8 +1,10 @@
 class Api::MeetupsController < ApplicationController
     before_action :authenticate_user!
     def index
-
-      end
+        @meetups = current_user.meetups
+        
+        render json: @meetups
+    end
 
     def show
 

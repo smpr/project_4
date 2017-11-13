@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :categories
+  has_many :meetups
   has_one :info
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable,

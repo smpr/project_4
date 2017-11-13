@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 20171113214649) do
     t.string "description"
     t.float "lat"
     t.float "lon"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_meetups_on_user_id"
   end
 
   create_table "steps", force: :cascade do |t|
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 20171113214649) do
 
   add_foreign_key "categories", "users"
   add_foreign_key "infos", "users"
+  add_foreign_key "meetups", "users"
   add_foreign_key "steps", "walkthroughs"
   add_foreign_key "users", "users"
   add_foreign_key "walkthroughs", "categories"
