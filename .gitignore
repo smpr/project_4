@@ -12,6 +12,6 @@ node_modules
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+.env
 .byebug_history
 

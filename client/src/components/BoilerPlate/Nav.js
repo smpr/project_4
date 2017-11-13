@@ -12,6 +12,7 @@ class Nav extends Component {
             <BodyContainer>
                 <div>
                     <Link to="/"><button>Home</button></Link>
+                    <Link to="/categories"><button>Categories</button></Link>
                 </div>
                 <div>
                     <Link to='/Users/Home'><button>User Home</button></Link>

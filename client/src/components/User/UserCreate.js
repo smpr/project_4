@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
+
 class UserCreate extends Component {
     state = { 
         info: {
@@ -13,7 +14,11 @@ class UserCreate extends Component {
         },
         redirectToInfoHome: false
     }
-    async componentWillMount() {
+    componentDidMount()
+{
+    fetch()
+    .then()
+}    async componentWillMount() {
         try {
             const res = await axios.get('/api/infos')
             this.setState({ info: res.data })
