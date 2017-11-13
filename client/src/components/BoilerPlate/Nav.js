@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import styled from 'styled-components'
 
+const BodyContainer = styled.div`
+display:flex;
+justify-content: space-around;
+` 
 class Nav extends Component {
     render() {
         return (
-            <div>
-                <Link to="/"><button>Home</button></Link>
-            </div>
+            <BodyContainer>
+                <div>
+                    <Link to="/"><button>Home</button></Link>
+                </div>
+                <div>
+                    <Link to='/Users/Home'><button>User Home</button></Link>
+                </div>
+            </BodyContainer>
         );
     }
 }

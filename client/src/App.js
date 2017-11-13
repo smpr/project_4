@@ -7,6 +7,7 @@ import Header from './components/BoilerPlate/Header'
 import Nav from './components/BoilerPlate/Nav'
 import HomePage from './components/Home/HomePage'
 
+import UserCreate from './components/User/UserCreate'
 import UserHome from './components/User/UserHome'
 import UserEdit from './components/User/UserEdit'
 import MeetUps from './components/Meetup/Meetups'
@@ -125,9 +126,10 @@ class App extends Component {
           
           <Switch>
             <Route exact path="/" render={SignUpLogInComponent} />
-           
+            <Route exact path="/Users/create" component={UserCreate} />
             <Route exact path="/Users/Home" component={UserHome} />
             <Route exact path="/Users/Edit" component={UserEdit} />
+           
             <Route exact path="/Users/Meetups" component={MeetUps} />
             <Route exact path="/Users/Meetups/:meetId/MeetupDetails" component={MeetDetails} />
 

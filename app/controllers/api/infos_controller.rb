@@ -1,9 +1,8 @@
 class Api::InfosController < ApplicationController
     before_action :authenticate_user!
     def index
-        @infos = current_user.infos
-    
-        render json: @infos
+        @info = current_user.info
+         render json: @info
       end
 
     def show
@@ -12,24 +11,17 @@ class Api::InfosController < ApplicationController
     end
     def create
         @user = current_user
-        @info = @user.infos.new(info_params)
-        
-    
-        if @info.save
-          render json: @info, status: :created
-        else
-          render json: @info.errors, status: :unprocessable_entity
-        end
-      end
+        @user.create_info(info_params)
+        puts "create hit"
+       end
     def update
-        @info = Info.find(params[:id])
-    
-    
-        if @info.update(info_params)
-          render json: @info
-        else
-          render json: @info.errors, status: :unprocessable_entity
-        end
+      puts "info patch hit"
+     @user = current_user
+      #   # @info = Info.find(params[:id])
+      @user.info.update(info_params)
+      #     render json: @info
+
+        
       end
       def destroy
         @info = Info.find(params[:id]).delete

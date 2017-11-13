@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
-class UserEdit extends Component {
+class UserCreate extends Component {
     state = { 
         info: {
         city: "",
@@ -16,7 +16,6 @@ class UserEdit extends Component {
     async componentWillMount() {
         try {
             const res = await axios.get('/api/infos')
-            console.log(res.data)
             this.setState({ info: res.data })
             console.log(this.state.info)
         } catch (error) {
@@ -26,8 +25,8 @@ class UserEdit extends Component {
     }
     editInfo = async () => {
 
-        const res = await axios.patch(`/api/infos/${this.state.info.id}`, {
-            info: this.state.info
+        const res = await axios.patch(`/api/infos`, {
+            info: this.state.info,
 
 
         })
@@ -42,7 +41,7 @@ class UserEdit extends Component {
     }
     handleSubmit = async (event) => {
         event.preventDefault()
-        const res = await axios.post(`/api/infos`, { 'info': this.state.info })
+        const res = await axios.post(`/api/infos`,  this.state.info )
         this.setState({ redirectToHome: true})
 
     }
@@ -69,10 +68,10 @@ class UserEdit extends Component {
                 <div>
                     Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
                 </div>
-                <button onClick={this.editInfo}>Edit</button>
+                <button onClick={this.handleSubmit}>Create</button>
             </div>
         );
     }
 }
 
-export default UserEdit;
+export default UserCreate;
