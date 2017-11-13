@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 class UserHome extends Component {
-    state = { 
+    state = {
         info: {
-        city: "",
-        state: "",
-        address: "",
-        country: "",
-        zip: "",
+            city: "",
+            state: "",
+            address: "",
+            country: "",
+            zip: "",
         }
     }
     async componentWillMount() {
@@ -23,6 +23,7 @@ class UserHome extends Component {
 
     }
     render() {
+ 
         return (
             <div>
                 <div>User Info</div>

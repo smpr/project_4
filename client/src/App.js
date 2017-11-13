@@ -117,9 +117,14 @@ class App extends Component {
       <HomePage
         signUp={this.signUp}
         signIn={this.signIn}
-        signOut={this.signOut} />
+        signOut={this.signOut}
+        loggedIn={this.state.signedIn} />
     )
-
+    const UserHomeLogOut = () => {
+      <UserHome
+      
+      />
+    }
     return (
       <Router>
         <div>

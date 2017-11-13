@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
@@ -46,6 +46,9 @@ class StepHome extends Component {
     }
 
     render() {
+        if (this.props.signedIn) {
+            return <Redirect to={`/signup`} />
+        }
         return (
             <BodyContainer>
                 <Container>
@@ -61,14 +64,14 @@ class StepHome extends Component {
                 </Container>
                 <Container>
                     <div>
-                    <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}>Add a Step</Link></div>
-                    <ol><b><h2>Steps:</h2></b>{this.state.steps.map((step, index) => {
-                        return (
-                            <li><Link key={step._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${step.id}/show`}>{step.title}
-                            </Link></li>
+                        <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}>Add a Step</Link></div>
+                        <ol><b><h2>Steps:</h2></b>{this.state.steps.map((step, index) => {
+                            return (
+                                <li><Link key={step._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${step.id}/show`}>{step.title}
+                                </Link></li>
 
-                        )
-                    })} </ol>
+                            )
+                        })} </ol>
                     </div>
                 </Container>
 

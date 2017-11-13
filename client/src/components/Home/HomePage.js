@@ -37,6 +37,7 @@ class SignUpLogIn extends Component {
         if (this.state.redirectToCategoryPage) {
             return <Redirect to={`/Categories`} />
           }
+
         return (
             <div> 
                 <form>
