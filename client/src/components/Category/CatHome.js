@@ -33,14 +33,15 @@ color: red;
 
 class CatHome extends Component {
     state = {
-        categories: []
+        categories: [],
+        meetups: []
     }
     async componentWillMount() {
         try {
-            const res = await axios.get('/api/categories')
-            console.log(res.data)
-            this.setState({ categories: res.data })
-            console.log(this.state.categories)
+            const cat = await axios.get('/api/categories')
+            const meetup = await axios.get('/api/meetupapi')
+            this.setState({ categories: cat.data, meetups: meetup.data })
+            console.log(this.state.meetups)
         } catch (error) {
             console.log(error)
         }
@@ -54,7 +55,8 @@ class CatHome extends Component {
                     <div>
                     <div> Please Select a Category</div>
                     <div><Link to="/categories/create"><button>Create New Category</button></Link></div>
-                
+              
+               
                 <ul>
                 {this.state.categories.map((category, index) => {
                     return (

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
         resources :steps
       end
     end
-    get "meetupapi", to: "meetupap#index"
+    get "meetupapi/:search", to: "meetupap#index"
     get "meetupapi", to: "meetupap#show"
   end
 

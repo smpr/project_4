@@ -33,16 +33,19 @@ color: red;
 class StepHome extends Component {
     state = {
         info: [],
-        steps: []
+        steps: [],
+        meetups: []
     }
     async componentWillMount() {
         try {
+            const searcher = "react"
             const catId = this.props.match.params.categoryId
             const walkId = this.props.match.params.walkthroughId
             const info = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}`)
             const steps = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}/steps`)
-            console.log(steps.data)
-            this.setState({ info: info.data, steps: steps.data })
+            const meetups = await axios.get(`/api/meetupapi/${searcher}`)
+            console.log(meetups.data)
+            this.setState({ info: info.data, steps: steps.data, meetups: meetups.data })
 
         } catch (error) {
             console.log(error)
@@ -64,7 +67,12 @@ class StepHome extends Component {
                         <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}><button>Edit</button></Link></div>
                     </FormContainer>
                     <FormContainer>
-                        <div>Meetup Place holder</div>
+                        <div><h2>Meetups:</h2></div>
+                        <div>{this.state.meetups.map((meetup, index)=>{
+                            return (
+                                <div><a href={meetup.link}>{meetup.name}</a></div>
+                            )
+                        })}</div>
                     </FormContainer>
                 </Container>
                 <Container>
