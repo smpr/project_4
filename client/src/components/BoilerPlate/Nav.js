@@ -5,6 +5,8 @@ import styled from 'styled-components'
 const BodyContainer = styled.div`
 display:flex;
 justify-content: space-around;
+background-color: #191919;
+height: 8vh;
 ` 
 class Nav extends Component {
     render() {

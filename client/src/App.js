@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './App.css';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from "./util/SessionHeaderUtil"
@@ -128,7 +129,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Header />
+          
           <Nav 
           signOut={this.signOut}
           /> 

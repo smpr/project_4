@@ -6,6 +6,8 @@ import styled from 'styled-components'
 const BodyContainer = styled.div`
 display:flex;
 justify-content: space-around;
+background-color: #323232;
+height: 100vh;
 `
 const Container = styled.div`
 display: flex;
@@ -13,17 +15,20 @@ flex-direction: column;
 justify-content: space-around;
 align-content: center;
 `
-const StepInfo = styled.div`
-width: 300px;
-height: 300px;
-background-color: red;
+const FormContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-content: center;
+height: 50vh;
+width: 25vw;
+color: white;
+background-color: #4B4B4B;
+
 `
-const StepList = styled.div`
-`
-const StepDescription = styled.div`
-width: 300px;
-height: 300px;
-background-color: blue;
+
+const Button = styled.button`
+color: red;
 `
 class StepShow extends Component {
     state = {
@@ -48,13 +53,13 @@ class StepShow extends Component {
             <BodyContainer>
                 <Container>
                 
-                    <StepInfo><b>Step:</b>{this.state.step.title}</StepInfo>
+                    <FormContainer><b>Step:</b>{this.state.step.title}</FormContainer>
                     <div><b>Helpful Links:</b><a href={this.state.step.links}>{this.state.step.links}</a></div>
                     <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${this.props.match.params.stepId}/edit`}><button>Edit</button></Link>
                     <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`}><button>Back</button></Link></div>
                     </Container>
                     <Container>
-                    <StepDescription><b>Description:</b>{this.state.step.body}</StepDescription>
+                    <FormContainer><b>Description:</b>{this.state.step.body}</FormContainer>
                     
                 </Container>
             </BodyContainer>
