@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
 const BodyContainer = styled.div`
@@ -54,6 +53,8 @@ class UserCreate extends Component {
         togglePage2: false,
         togglePage3: false,
         togglePage4: false,
+        togglePage5: false,
+        togglePage6: false,
         toggleConirm: false,
     }
 
@@ -87,6 +88,7 @@ class UserCreate extends Component {
         })
 
     }
+
     handleChange = (event) => {
         const attribute = event.target.name
         const clonedInfo = { ...this.state.info }
@@ -96,10 +98,8 @@ class UserCreate extends Component {
     handleSubmit = async (event) => {
         event.preventDefault()
         const res = await axios.post(`/api/infos`, this.state.info)
-        this.setState({ redirectToHome: true })
-
-    }
-    nextSubmit = async (event) => {
+        this.setState({ togglePage4:false, togglePage6: true })
+        console.log("submit hit")
 
     }
     signUp = (event) => {
@@ -109,9 +109,9 @@ class UserCreate extends Component {
             this.state.info.password,
             this.state.info.password_confirmation
         ),
-        this.setState({
-            togglePage2: true
-        })
+            this.setState({
+                togglePage2: true
+            })
     }
 
     render() {
@@ -168,25 +168,29 @@ class UserCreate extends Component {
                 <div>State: {this.state.info.state}</div>
                 <div>Zip: {this.state.info.zip}</div>
                 <div>Country: {this.state.info.country}</div>
+                <div><button onClick={this.handleSubmit}>Submit</button></div>
             </div>
-        const confirmation =
-            <div>
-                Confirmation Page
-            </div>
+        
+        const moveAlong =
+
+            <Redirect to={`/Categories`} />
+
+
 
         if (this.state.redirectToInfoHome) {
             return <Redirect to={`/Users/Home`} />
         }
-        const postView =
+        const userView =
             this.state.togglePage2 ? page2
                 : this.state.togglePage3 ? page3
                     : this.state.togglePage4 ? page4
-                        : page1
+                            : this.state.togglePage6 ? moveAlong
+                                : page1
 
         return (
             <div>
-                This is what will be around the page
-                {postView}
+
+                {userView}
             </div>
         );
         return (

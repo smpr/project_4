@@ -52,18 +52,13 @@ class App extends Component {
   }
   signUp = async (email, password, password_confirmation) => {
     try {
-      console.log('yooooooooo')
-      console.log(email)
-      console.log(password)
-      console.log(password_confirmation)
-      
-      const payload = {
+        const payload = {
         email: email,
         password: password,
         password_confirmation: password_confirmation
       }
       const response = await axios.post('/auth', payload)
-      console.log(response)
+
       saveAuthTokens(response.headers)
 
       this.setState({
@@ -130,24 +125,24 @@ class App extends Component {
     )
     const CreateUserSignup = () => (
       <UserCreate
-      signUp={this.signUp}
+        signUp={this.signUp}
       />
     )
     return (
       <Router>
         <div>
-          
-          <Nav 
-          signOut={this.signOut}
-          /> 
-          
+
+          <Nav
+            signOut={this.signOut}
+          />
+
           <Switch>
             <Route exact path="/" render={SignUpLogInComponent} />
             <Route exact path="/signup" render={SignUpLogInComponent} />
             <Route exact path="/Users/create" render={CreateUserSignup} />
             <Route exact path="/Users/Home" component={UserHome} />
             <Route exact path="/Users/Edit" component={UserEdit} />
-           
+
             <Route exact path="/Users/Meetups" component={MeetUps} />
             <Route exact path="/Users/Meetups/:meetId/MeetupDetails" component={MeetDetails} />
 

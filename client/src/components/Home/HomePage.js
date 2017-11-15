@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const BodyContainer = styled.div`
@@ -77,12 +77,7 @@ class SignUpLogIn extends Component {
                             <input onChange={this.handleChange} type="password" name="password" value={this.state.password} />
                         </div>
                         <div>
-                            <label htmlFor="password_confirmation">Confirm Password: </label>
-                            <input onChange={this.handleChange} type="password" name="password_confirmation"
-                                value={this.state.password_confirmation} />
-                        </div>
-                        <div>
-                            <Button onClick={this.signUp}>Sign Up</Button>
+                            <Link to={`/Users/Create`}><Button>Sign Up</Button></Link>
                             <Button onClick={this.signIn}>Log In</Button>
                         </div>
 
