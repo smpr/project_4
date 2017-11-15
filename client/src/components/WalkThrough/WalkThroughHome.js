@@ -9,6 +9,10 @@ justify-content: space-around;
 background-color: #323232;
 height: 100vh;
 `
+const LinkDiv = styled.div`
+display:flex;
+justify-content: space-between;
+`
 const Container = styled.div`
 display: flex;
 flex-direction: column;
@@ -20,10 +24,13 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
 align-content: center;
-height: 50vh;
 width: 25vw;
 color: white;
 background-color: #4B4B4B;
+a {
+    color: white;
+    text-decoration: none;
+}
 
 `
 
@@ -43,10 +50,10 @@ class WalkThroughHome extends Component {
             const res = await axios.get(`/api/categories/${catId}/walkthroughs`)
             const searcher = this.state.category.title
             const meetups = await axios.get(`/api/meetupapi/${searcher}`)
-            
+
             console.log(meetups.data)
-             this.setState({ meetups: meetups.data, walkthroughs: res.data })
-   
+            this.setState({ meetups: meetups.data, walkthroughs: res.data })
+
         } catch (error) {
             console.log(error)
         }
@@ -57,25 +64,27 @@ class WalkThroughHome extends Component {
             <BodyContainer>
                 <FormContainer>
                     <div><h2>Walkthroughs:</h2></div>
-                    <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}>Create New Walkthrough</Link>
+                    <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}><button>Create New Walkthrough</button></Link>
                     <div>
                         {this.state.walkthroughs.map((walkthrough, index) => {
                             return (
-                                <div><Link key={walkthrough._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${walkthrough.id}/steps`}>{walkthrough.name}
+                                <div><Link key={walkthrough._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${walkthrough.id}/steps`}><b>{walkthrough.name}</b>
                                 </Link></div>
 
                             )
                         })}
                     </div>
                 </FormContainer>
+              
                 <FormContainer>
-                    
-                    <div><h2>Meetups:</h2></div>
-                        <div>{this.state.meetups.map((meetup, index)=>{
+                    <div>
+                        <div><h2>Meetups:</h2></div>
+                        <div>{this.state.meetups.map((meetup, index) => {
                             return (
-                                <div><a href={meetup.link}>{meetup.name}</a></div>
+                                <LinkDiv><div><a href={meetup.link}>{meetup.name}</a></div><div><button>Save</button></div></LinkDiv>
                             )
-                        })}</div>
+                        })}</div></div>
+                    
                 </FormContainer>
             </BodyContainer>
         );
