@@ -162,12 +162,12 @@ class UserCreate extends Component {
         const page4 =
             <div>
                 <div><h2>Please Verify Your Info</h2></div>
-                <div>Email: {this.state.email}</div>
-                <div>Address: {this.state.address}</div>
-                <div>City: {this.state.city}</div>
-                <div>State: {this.state.state}</div>
-                <div>Zip: {this.state.zip}</div>
-                <div>Country: {this.state.country}</div>
+                <div>Email: {this.state.info.email}</div>
+                <div>Address: {this.state.info.address}</div>
+                <div>City: {this.state.info.city}</div>
+                <div>State: {this.state.info.state}</div>
+                <div>Zip: {this.state.info.zip}</div>
+                <div>Country: {this.state.info.country}</div>
             </div>
         const confirmation =
             <div>
