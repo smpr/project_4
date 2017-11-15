@@ -34,18 +34,21 @@ class StepHome extends Component {
     state = {
         info: [],
         steps: [],
-        meetups: []
+        meetups: [],
+        category: {}
     }
     async componentWillMount() {
         try {
-            const searcher = "react"
+            
             const catId = this.props.match.params.categoryId
             const walkId = this.props.match.params.walkthroughId
+            const category = await axios.get(`/api/categories/${catId}`)
+            this.setState({ category: category.data })
             const info = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}`)
+            this.setState({info: info.data})
             const steps = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}/steps`)
-            const meetups = await axios.get(`/api/meetupapi/${searcher}`)
-            console.log(meetups.data)
-            this.setState({ info: info.data, steps: steps.data, meetups: meetups.data })
+            this.setState({steps: steps.data})
+            
 
         } catch (error) {
             console.log(error)
@@ -66,14 +69,7 @@ class StepHome extends Component {
                         <div><b>Helpful Links:</b><a href={this.state.info.links}>{this.state.info.links}</a></div>
                         <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}><button>Edit</button></Link></div>
                     </FormContainer>
-                    <FormContainer>
-                        <div><h2>Meetups:</h2></div>
-                        <div>{this.state.meetups.map((meetup, index)=>{
-                            return (
-                                <div><a href={meetup.link}>{meetup.name}</a></div>
-                            )
-                        })}</div>
-                    </FormContainer>
+                   
                 </Container>
                 <Container>
                     <FormContainer>

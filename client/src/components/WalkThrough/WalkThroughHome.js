@@ -1,19 +1,52 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components'
 
+const BodyContainer = styled.div`
+display:flex;
+justify-content: space-around;
+background-color: #323232;
+height: 100vh;
+`
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-content: center;
+`
+const FormContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-content: center;
+height: 50vh;
+width: 25vw;
+color: white;
+background-color: #4B4B4B;
+
+`
+
+const Button = styled.button`
+color: red;
+`
 class WalkThroughHome extends Component {
     state = {
-        walkthroughs: []
+        walkthroughs: [],
+        meetups: []
     }
     async componentWillMount() {
         try {
             const catId = this.props.match.params.categoryId
-            
+            const category = await axios.get(`/api/categories/${catId}`)
+            this.setState({ category: category.data })
             const res = await axios.get(`/api/categories/${catId}/walkthroughs`)
+            const searcher = this.state.category.title
+            const meetups = await axios.get(`/api/meetupapi/${searcher}`)
             
-            this.setState({ walkthroughs: res.data })
-            
+ 
+             this.setState({ meetups: meetups.data, walkthroughs: res.data })
+   
         } catch (error) {
             console.log(error)
         }
@@ -21,18 +54,30 @@ class WalkThroughHome extends Component {
     }
     render() {
         return (
-            <div>
-                <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}>Create New Walkthrough</Link>
-                <div>
-                 {this.state.walkthroughs.map((walkthrough, index) => {
-                    return (
-                        <div><Link key={walkthrough._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${walkthrough.id}/steps`}>{walkthrough.name}
-                        </Link></div>
+            <BodyContainer>
+                <FormContainer>
+                    <div><h2>Walkthroughs:</h2></div>
+                    <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}>Create New Walkthrough</Link>
+                    <div>
+                        {this.state.walkthroughs.map((walkthrough, index) => {
+                            return (
+                                <div><Link key={walkthrough._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${walkthrough.id}/steps`}>{walkthrough.name}
+                                </Link></div>
+
+                            )
+                        })}
+                    </div>
+                </FormContainer>
+                <FormContainer>
                     
-                    )
-                })} 
-            </div>
-            </div>
+                    <div><h2>Meetups:</h2></div>
+                        <div>{this.state.meetups.map((meetup, index)=>{
+                            return (
+                                <div><a href={meetup.link}>{meetup.name}</a></div>
+                            )
+                        })}</div>
+                </FormContainer>
+            </BodyContainer>
         );
     }
 }
