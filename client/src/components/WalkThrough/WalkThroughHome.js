@@ -59,6 +59,13 @@ class WalkThroughHome extends Component {
         }
 
     }
+    handleSubmit = async (index) => {
+        const id = index
+        const meetup = this.state.meetups[id]
+        console.log('I work')
+        console.log(meetup)
+
+    }
     render() {
         return (
             <BodyContainer>
@@ -75,16 +82,16 @@ class WalkThroughHome extends Component {
                         })}
                     </div>
                 </FormContainer>
-              
+
                 <FormContainer>
                     <div>
                         <div><h2>Meetups:</h2></div>
                         <div>{this.state.meetups.map((meetup, index) => {
                             return (
-                                <LinkDiv><div><a href={meetup.link}>{meetup.name}</a></div><div><button>Save</button></div></LinkDiv>
+                                <LinkDiv><div><a href={meetup.link}>{meetup.name}</a></div><div><button value={index} onClick={() => this.handleSubmit(index)}>save</button></div></LinkDiv>
                             )
                         })}</div></div>
-                    
+
                 </FormContainer>
             </BodyContainer>
         );
