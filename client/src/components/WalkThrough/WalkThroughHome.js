@@ -44,7 +44,7 @@ class WalkThroughHome extends Component {
             const searcher = this.state.category.title
             const meetups = await axios.get(`/api/meetupapi/${searcher}`)
             
- 
+            console.log(meetups.data)
              this.setState({ meetups: meetups.data, walkthroughs: res.data })
    
         } catch (error) {
