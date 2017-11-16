@@ -1,9 +1,6 @@
-<BodyContainer>
-                <FormContainer>
-                    
-
-               
-
-                    <button onClick={this.handleSubmit}>Create</button>
-                </FormContainer>
-            </BodyContainer >
+redirect after logout
+change app name
+fix the nav bar alignment
+make a seeds file
+MAKE EVEVERTHING CENTER IN THE DAMNED DIVS!!!!
+find a backsplash image
