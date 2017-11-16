@@ -77,6 +77,7 @@ class WalkThroughHome extends Component {
     render() {
         return (
             <BodyContainer>
+                <Container>
                 <FormContainer>
                     <div>
                     <div><h2>Walkthroughs:</h2>
@@ -94,7 +95,8 @@ class WalkThroughHome extends Component {
                     </div>
                     </div>
                 </FormContainer>
-
+                </Container>
+                <Container>
                 <FormContainer>
                     <div>
                         <div><h2>Meetups:</h2></div>
@@ -105,6 +107,7 @@ class WalkThroughHome extends Component {
                         })}</div></div>
 
                 </FormContainer>
+                </Container>
             </BodyContainer>
         );
     }

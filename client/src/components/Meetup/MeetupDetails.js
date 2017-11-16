@@ -87,15 +87,16 @@ async componentWillMount() {
                         </div>
                     </FormContainer>
                 </Container>
-                <FormContainer>
-                <iframe src="//www.google.com/maps/embed/v1/place?q=Empire%20State%20Building
-      &zoom=13
-      &attribution_source=Google+Maps+Embed+API
-      &attribution_web_url=https://developers.google.com/maps/documentation/embed/
-      &key=AIzaSyBs7QCycmCzKwvri5ZotdhCpGihXosxp2Q" allowfullscreen>
-  </iframe>
-                    </FormContainer>
-
+                <Container>
+                        <FormContainer>
+                        <iframe src="//www.google.com/maps/embed/v1/place?q=Empire%20State%20Building
+                            &zoom=13
+                            &attribution_source=Google+Maps+Embed+API
+                            &attribution_web_url=https://developers.google.com/maps/documentation/embed/
+                            &key=AIzaSyBs7QCycmCzKwvri5ZotdhCpGihXosxp2Q" allowfullscreen>
+                        </iframe>
+                        </FormContainer>
+                </Container>
             </BodyContainer>
         );
     }

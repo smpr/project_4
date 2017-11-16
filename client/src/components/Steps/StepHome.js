@@ -74,7 +74,10 @@ class StepHome extends Component {
                         <div><h2>{this.state.info.name}</h2></div>
                         <div><b>Description:</b> {this.state.info.body}</div>
                         
-                        <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}><button>Edit</button></Link></div>
+                        <div>
+                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}><button>Edit</button></Link>
+                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`}><button>Back</button></Link>
+                        </div>
                     </FormContainer>
                    
                 </Container>
