@@ -12,7 +12,7 @@ import HomePage from './components/Home/HomePage'
 import UserCreate from './components/User/UserCreate'
 import UserHome from './components/User/UserHome'
 import UserEdit from './components/User/UserEdit'
-import MeetUps from './components/Meetup/Meetups'
+
 import MeetDetails from './components/Meetup/MeetupDetails'
 
 import CatHome from './components/Category/CatHome'
@@ -143,7 +143,7 @@ class App extends Component {
             <Route exact path="/Users/Home" component={UserHome} />
             <Route exact path="/Users/Edit" component={UserEdit} />
 
-            <Route exact path="/Users/Meetups" component={MeetUps} />
+            
             <Route exact path="/Users/Meetups/:meetId/MeetupDetails" component={MeetDetails} />
 
 
