@@ -55,24 +55,29 @@ class CatHome extends Component {
     render() {
         return (
             <BodyContainer>
-                
-                <FormContainer>
-                    <div>
-                    <div> Please Select a Category</div>
-                    <div><Link to="/categories/create"><button>Create New Category</button></Link></div>
-              
-               
-                <ul>
-                {this.state.categories.map((category, index) => {
-                    return (
-                        <div><li><Link key={category._id} to={`/Categories/${category.id}/WalkThroughs`}>{category.title}
-                        </Link></li></div>
-
-                    )
-                })}
-                </ul>
-                </div>
-                </FormContainer>
+                <Container>
+                    <FormContainer>
+                        <div>
+                            <div> 
+                                Please Select a Category
+                            </div>
+                            <div>
+                                <Link to="/categories/create"><button>Create New Category</button></Link>
+                            </div>
+                            <ul>
+                            {this.state.categories.map((category, index) => {
+                                return (
+                                        <div>
+                                            <li>
+                                                <Link key={category._id} to={`/Categories/${category.id}/WalkThroughs`}>{category.title}</Link>
+                                            </li>
+                                        </div>
+                                        )
+                                        })}
+                            </ul>
+                        </div>
+                    </FormContainer>
+                </Container>
                
             </BodyContainer>
         );
