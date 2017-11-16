@@ -53,12 +53,12 @@ class UserHome extends Component {
             const info = await axios.get('/api/infos')
             const meetups = await axios.get('/api/meetups')
             this.setState({ info: info.data, meetups: meetups.data })
-            console.log(this.state.infos)
         } catch (error) {
             console.log(error)
         }
 
     }
+  
     render() {
 
         return (

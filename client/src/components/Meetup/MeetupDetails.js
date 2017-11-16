@@ -33,7 +33,12 @@ a {
 class componentName extends Component {
     state = {
         meetup:{},
-        redirectToUserHome: false
+        redirectToUserHome: false,
+        mapsInfo:[{
+            name: [],
+            lon: [],
+            lat: []
+    }]
     }
 // grabs all meetup id that the user clicked save that was then saved to the meetup model
     async componentWillMount() {
@@ -41,12 +46,36 @@ class componentName extends Component {
             const meetId = this.props.match.params.meetId
             const meetup = await axios.get(`/api/meetups/${meetId}`)
             this.setState({ meetup: meetup.data })
-            console.log(this.state.meetup)
+            this.state.mapsInfo.name = this.state.meetup.name
+            this.state.mapsInfo.lon = this.state.meetup.lon
+            this.state.mapsInfo.lat = this.state.meetup.lat
+           
+            console.log(this.state.mapsInfo)
         } catch (error) {
             console.log(error)
         }
 
     }
+    async getMapCords() { 
+        try {
+            //grab meetup name
+        const meetName = this.state.meetup.name
+       
+        //grab meetup long
+        const meetLong = this.state.meetup.lon
+        //grab meetup lat
+
+        const meetLat = this.state.meetup.lat
+        //save into a new state as arrays
+        this.setState({ mapsInfo: meetName})
+        //display on google map
+        //
+        console
+        console.log(meetName)
+            } catch (error) {
+            console.log(error)
+                            }
+        }
     //allows user to delete this meetup
     deleteMeetup = async () => {
         const meetId = this.props.match.params.meetId
@@ -87,6 +116,15 @@ class componentName extends Component {
                 <div><Link to='/Users/Home'><button>Back To User</button></Link></div>
                 <div><button onClick={this.deleteMeetup}>Delete Meetup</button></div>
                 </FormContainer>
+                <FormContainer>
+                <iframe src="//www.google.com/maps/embed/v1/place?q=Empire%20State%20Building
+      &zoom=13
+      &attribution_source=Google+Maps+Embed+API
+      &attribution_web_url=https://developers.google.com/maps/documentation/embed/
+      &key=AIzaSyBs7QCycmCzKwvri5ZotdhCpGihXosxp2Q" allowfullscreen>
+  </iframe>
+                    </FormContainer>
+
             </BodyContainer>
         );
     }
