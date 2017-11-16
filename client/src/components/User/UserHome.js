@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
+import sample from './samplemap.png'
 
 const BodyContainer = styled.div`
 display:flex;
@@ -33,7 +34,11 @@ a {
 }
 
 `
-
+const ImgContainer = styled.div`
+img {
+width: 25vw;
+}
+`
 const Button = styled.button`
 color: red;
 `
@@ -66,17 +71,17 @@ class UserHome extends Component {
                 <FormContainer>
                     <div>
                         <h2>User Info</h2>
-                        First Name:<br />
-                        Last Name:<br />
                         Street: {this.state.info.address}<br />
                         City: {this.state.info.city}<br />
                         State: {this.state.info.state}<br />
                         Country: {this.state.info.country}<br />
                         Zip: {this.state.info.zip}<br />
-                    </div>
+                    
                     <div><Link to='/Users/edit'><button>Edit</button></Link></div>
+                    </div>
                 </FormContainer>
                 <FormContainer>
+                    <div>
                     <div><h2>Meetups:</h2></div>
                 {this.state.meetups.map((meetup, index) => {
                             return (
@@ -85,6 +90,10 @@ class UserHome extends Component {
 
                             )
                         })}
+                        </div>
+                        <ImgContainer>
+                           <img src={sample} />
+                            </ImgContainer>
                     </FormContainer>
             </BodyContainer>
         );
