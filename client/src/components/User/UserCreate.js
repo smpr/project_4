@@ -116,7 +116,8 @@ class UserCreate extends Component {
 
     render() {
         const page1 =
-            <div>
+            <BodyContainer>
+                <FormContainer>
                 <div>
                     <h2><b>Create User</b></h2>
                 </div>
@@ -134,9 +135,11 @@ class UserCreate extends Component {
                         value={this.state.info.password_confirmation} />
                 </div>
                 <div><button onClick={this.signUp}>Next</button></div>
-            </div>
+                </FormContainer>
+            </BodyContainer>
         const page2 =
-            <div>
+            <BodyContainer>
+                <FormContainer>
                 <div>
                     Address: <input onChange={this.handleChange} name="address" value={this.state.info.address} />
                 </div>
@@ -144,9 +147,11 @@ class UserCreate extends Component {
                     Zip:<input onChange={this.handleChange} name="zip" value={this.state.info.zip} />
                 </div>
                 <div><button onClick={this.promptToThirdForm}>Next</button></div>
-            </div>
+                </FormContainer>
+            </BodyContainer>
         const page3 =
-            <div>
+            <BodyContainer>
+                <FormContainer>
                 <div>
                     City: <input onChange={this.handleChange} name="city" value={this.state.info.city} />
                 </div>
@@ -158,9 +163,11 @@ class UserCreate extends Component {
                     Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
                 </div>
                 <div><button onClick={this.promptToFourthForm}>Next</button></div>
-            </div>
+                </FormContainer>
+            </BodyContainer>
         const page4 =
-            <div>
+            <BodyContainer>
+                <FormContainer>
                 <div><h2>Please Verify Your Info</h2></div>
                 <div>Email: {this.state.info.email}</div>
                 <div>Address: {this.state.info.address}</div>
@@ -169,7 +176,8 @@ class UserCreate extends Component {
                 <div>Zip: {this.state.info.zip}</div>
                 <div>Country: {this.state.info.country}</div>
                 <div><button onClick={this.handleSubmit}>Submit</button></div>
-            </div>
+                </FormContainer>
+            </BodyContainer>
         
         const moveAlong =
 
