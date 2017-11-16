@@ -88,28 +88,30 @@ class UserEdit extends Component {
         }
         return (
             <BodyContainer>
-                <FormContainer>
-                    <h2>Edit User</h2>
-                    
-                    <div>
-                        Address: <input onChange={this.handleChange} name="address" value={this.state.info.address} />
-                    </div>
-                    <div>
-                        City: <input onChange={this.handleChange} name="city" value={this.state.info.city} />
-                    </div>
-                    <div>
-                        State:<input onChange={this.handleChange} name="state" value={this.state.info.state} />
-                    </div>
-                    <div>
-                        Zip:<input onChange={this.handleChange} name="zip" value={this.state.info.zip} />
-                    </div>
-                    <div>
-                        Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
-                    </div>
-                    <div>
-                        <button onClick={this.editInfo}>Edit</button>
-                    </div>
-                </FormContainer>
+                <Container>
+                    <FormContainer>
+                        <h2>Edit User</h2>
+                        
+                        <div>
+                            Address: <input onChange={this.handleChange} name="address" value={this.state.info.address} />
+                        </div>
+                        <div>
+                            City: <input onChange={this.handleChange} name="city" value={this.state.info.city} />
+                        </div>
+                        <div>
+                            State:<input onChange={this.handleChange} name="state" value={this.state.info.state} />
+                        </div>
+                        <div>
+                            Zip:<input onChange={this.handleChange} name="zip" value={this.state.info.zip} />
+                        </div>
+                        <div>
+                            Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
+                        </div>
+                        <div>
+                            <button onClick={this.editInfo}>Edit</button>
+                        </div>
+                    </FormContainer>
+                </Container>
             </BodyContainer >
         );
     }

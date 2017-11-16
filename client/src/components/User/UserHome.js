@@ -84,33 +84,39 @@ class UserHome extends Component {
 
         return (
             <BodyContainer>
-                <FormContainer>
-                    <div>
-                        <h2>User Info</h2>
-                        Street: {this.state.info.address}<br />
-                        City: {this.state.info.city}<br />
-                        State: {this.state.info.state}<br />
-                        Country: {this.state.info.country}<br />
-                        Zip: {this.state.info.zip}<br />
-                    
-                    <div><Link to='/Users/edit'><button>Edit</button></Link></div>
-                    </div>
-                </FormContainer>
-                <FormContainer>
-                    <div>
-                    <div><h2>Meetups:</h2></div>
-                {this.state.meetups.map((meetup, index) => {
-                            return (
-                                <div><Link key={meetup._id} to={`/Users/Meetups/${meetup.id}/MeetupDetails`}><b>{meetup.name}</b>
-                                </Link></div>
-
-                            )
-                        })}
+                <Container>
+                    <FormContainer>
+                        <div>
+                            <h2>User Info</h2>
+                            Street: {this.state.info.address}<br />
+                            City: {this.state.info.city}<br />
+                            State: {this.state.info.state}<br />
+                            Country: {this.state.info.country}<br />
+                            Zip: {this.state.info.zip}<br />
+                        
+                        <div><Link to='/Users/edit'><button>Edit</button></Link></div>
                         </div>
-                        <ImgContainer>
-                           <img src={sample} />
-                            </ImgContainer>
                     </FormContainer>
+                </Container>
+                <Container>
+                    <FormContainer>
+                        <div>
+                            <div>
+                                <h2>Meetups:</h2>
+                            </div>
+                                {this.state.meetups.map((meetup, index) => {
+                                    return (
+                                        <div><Link key={meetup._id} to={`/Users/Meetups/${meetup.id}/MeetupDetails`}><b>{meetup.name}</b>
+                                        </Link></div>
+
+                                    )
+                                })}
+                        </div>
+                            <ImgContainer>
+                            <img src={sample} />
+                                </ImgContainer>
+                        </FormContainer>
+                </Container>
             </BodyContainer>
         );
     }
