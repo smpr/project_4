@@ -80,7 +80,7 @@ class UserHome extends Component {
                     <div><h2>Meetups:</h2></div>
                 {this.state.meetups.map((meetup, index) => {
                             return (
-                                <div><Link key={meetup._id} to={`/`}><b>{meetup.name}</b>
+                                <div><Link key={meetup._id} to={'/'}><b>{meetup.name}</b>
                                 </Link></div>
 
                             )
