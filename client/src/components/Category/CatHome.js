@@ -40,6 +40,7 @@ class CatHome extends Component {
         categories: [],
         meetups: []
     }
+    //this finds and mounts all categories and meetups that relate to the category based on the title
     async componentWillMount() {
         try {
             const cat = await axios.get('/api/categories')
