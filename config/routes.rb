@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
     get "meetupapi/:search", to: "meetupap#index"
     get "meetupapi", to: "meetupap#show"
+    get "googleapi", to: "google_api#show"
   end
 
 

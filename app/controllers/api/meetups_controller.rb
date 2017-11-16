@@ -44,6 +44,6 @@ class Api::MeetupsController < ApplicationController
       private
       
           def meetup_params
-              params.require(:meetup).permit(:city, :country, :indentification, :name, :link, :description, :lat, :float)
+              params.require(:meetup).permit(:city, :country, :indentification, :name, :link, :description, :lat, :float, :lon)
           end
 end
