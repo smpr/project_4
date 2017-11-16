@@ -20,12 +20,16 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
 align-content: center;
-height: 50vh;
 width: 25vw;
 color: white;
 background-color: #4B4B4B;
+a {
+    color: white;
+    text-decoration: none;
+}
 
 `
+
 
 const Button = styled.button`
 color: red;
