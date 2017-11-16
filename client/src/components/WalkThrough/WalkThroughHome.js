@@ -77,8 +77,11 @@ class WalkThroughHome extends Component {
         return (
             <BodyContainer>
                 <FormContainer>
-                    <div><h2>Walkthroughs:</h2></div>
+                    <div>
+                    <div><h2>Walkthroughs:</h2>
                     <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}><button>Create New Walkthrough</button></Link>
+                    </div>
+                    <br/>
                     <div>
                         {this.state.walkthroughs.map((walkthrough, index) => {
                             return (
@@ -87,6 +90,7 @@ class WalkThroughHome extends Component {
 
                             )
                         })}
+                    </div>
                     </div>
                 </FormContainer>
 

@@ -77,6 +77,7 @@ class WalkThroughCreate extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <FormContainer>
                         <div>
+                        <div>
                             <h2>New Walkthrough</h2>
                         </div>
                         <div>
@@ -99,18 +100,10 @@ class WalkThroughCreate extends Component {
 
                                 value={this.state.walkthrough.body} />
                         </div>
-                        <div>
-                            <input
-                                placeholder='Category Name'
-                                onChange={this.handleChange}
-                                name="links"
-                                type="text"
-                                required
 
-                                value={this.state.walkthrough.links} />
-                        </div>
                         <div>
                             <button>Create Category</button>
+                        </div>
                         </div>
                     </FormContainer>
                 </form>
