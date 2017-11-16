@@ -80,14 +80,22 @@ class StepHome extends Component {
                 </Container>
                 <Container>
                     <FormContainer>
-                        <div><Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}><button>Add a Step</button></Link></div>
-                        <ol><b><h2>Steps:</h2></b>{this.state.steps.map((step, index) => {
+                        
+                        <ol>
+                            <div>
+                            <h2>Steps:</h2>
+                            <div>
+                                <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}><button>Add a Step</button></Link>
+                            </div>
+                            {this.state.steps.map((step, index) => {
                             return (
                                 <li><Link key={step._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${step.id}/show`}>{step.title}
                                 </Link></li>
 
                             )
-                        })} </ol>
+                        })} 
+                        </div>
+                        </ol>
                     </FormContainer>
                 </Container>
 
