@@ -35,6 +35,7 @@ class componentName extends Component {
         meetup:{},
         redirectToUserHome: false
     }
+// grabs all meetup id that the user clicked save that was then saved to the meetup model
     async componentWillMount() {
         try {
             const meetId = this.props.match.params.meetId
@@ -46,6 +47,7 @@ class componentName extends Component {
         }
 
     }
+    //allows user to delete this meetup
     deleteMeetup = async () => {
         const meetId = this.props.match.params.meetId
     const res = await axios.delete(`/api/meetups/${meetId}`)
@@ -53,6 +55,23 @@ class componentName extends Component {
     this.setState({ redirectToUserHome: true })
 
     }
+    //run a function that will sort by date then delete the ones that have passed already based on todays time date. only delete the day after
+//grab the date of the event + 1 day
+
+//grab todays date
+
+//Check to see if todays date matches event day +1
+
+//if it is past day 
+
+//delete the meetup
+
+//if its not past yet
+
+//display it in a new state
+
+//save the update to the object
+
     render() {
         if (this.state.redirectToUserHome) {
             return <Redirect to={`/Users/Home`} />
