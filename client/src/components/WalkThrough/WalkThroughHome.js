@@ -75,7 +75,7 @@ class WalkThroughHome extends Component {
          const id = index
          const meetup = this.state.meetups[id]
         this.setState({ meetup: meetup})
-        const res = await axios.post(`/api/meetups`, { 'meetup': this.state.meetup })
+        const res = await axios.post(`/api/meetups`, { meetup: this.state.meetup })
         } catch (error){
             console.log(error)
         }

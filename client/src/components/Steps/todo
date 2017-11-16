@@ -1,37 +1,9 @@
 <BodyContainer>
                 <FormContainer>
-                    <div>
-                        <h2><b>Create User</b></h2>
-                    </div>
-                    <div>
-                        E-mail:
-                        <input onChange={this.handleChange} type="text" name="email" value={this.state.email} />
-                    </div>
-                    <div>
-                        Password:
-                        <input onChange={this.handleChange} type="password" name="password" value={this.state.password} />
-                    </div>
-                    <div>
-                        Confirm Password:
-                        <input onChange={this.handleChange} type="password" name="password_confirmation"
-                            value={this.state.password_confirmation} />
-                    </div>
+                    
 
-                    <div>
-                        Address: <input onChange={this.handleChange} name="address" value={this.state.info.address} />
-                    </div>
-                    <div>
-                        City: <input onChange={this.handleChange} name="city" value={this.state.info.city} />
-                    </div>
-                    <div>
-                        State:<input onChange={this.handleChange} name="state" value={this.state.info.state} />
-                    </div>
-                    <div>
-                        Zip:<input onChange={this.handleChange} name="zip" value={this.state.info.zip} />
-                    </div>
-                    <div>
-                        Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
-                    </div>
+               
+
                     <button onClick={this.handleSubmit}>Create</button>
                 </FormContainer>
             </BodyContainer >

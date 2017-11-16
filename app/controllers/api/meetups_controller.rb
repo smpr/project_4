@@ -2,19 +2,7 @@ class Api::MeetupsController < ApplicationController
     before_action :authenticate_user!
     include HTTParty
     base_uri 'https://api.meetup.com/find/groups'
-    # def self.generate(api_id)
-    #   star_war = find_by api_id: api_id
-    #   return star_war unless star_war.nil?
-  
-    #   response = get "/#{api_id}"
-    #   placeholder_image = "https://www.placecage.com/c/#{200 + api_id}/#{200 + api_id}"
-  
-    #   create!(name: response['name'],
-    #           image: placeholder_image,
-    #           wins: 0, 
-    #           api_id: api_id)
-    # end
- 
+
     def index
         @meetups = current_user.meetups
         
