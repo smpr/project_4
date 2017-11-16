@@ -22,7 +22,7 @@ align-content: center;
 const FormContainer = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-around;
+justify-content: center;
 align-content: center;
 width: 25vw;
 color: white;
@@ -67,10 +67,12 @@ class CatCreate extends Component {
         }
         return (
             <BodyContainer>
+                <Container>
                 <form onSubmit={this.handleSubmit}>
                     <FormContainer>
                         <div>
-                            <h2>New Category</h2>
+                        <div>
+                            <h2>Create a Category:</h2>
                         </div>
                         <div>
                             <input
@@ -85,9 +87,10 @@ class CatCreate extends Component {
                         <div>
                             <button>Create Category</button>
                         </div>
+                        </div>
                     </FormContainer>
                 </form>
-
+                </Container>
             </BodyContainer>
         );
     }

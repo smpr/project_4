@@ -73,6 +73,7 @@ class WalkThroughHome extends Component {
             console.log(error)
         }
     }
+    
     render() {
         return (
             <BodyContainer>

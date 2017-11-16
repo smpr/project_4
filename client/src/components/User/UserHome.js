@@ -63,7 +63,23 @@ class UserHome extends Component {
         }
 
     }
-   
+       //run a function that will sort by date then delete the ones that have passed already based on todays time date. only delete the day after
+//grab the date of the event + 1 day
+
+//grab todays date
+
+//Check to see if todays date matches event day +1
+
+//if it is past day 
+
+//delete the meetup
+
+//if its not past yet
+
+//display it in a new state
+
+//save the update to the object
+
     render() {
 
         return (
