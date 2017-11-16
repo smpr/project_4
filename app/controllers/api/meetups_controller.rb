@@ -14,7 +14,7 @@ class Api::MeetupsController < ApplicationController
     #           wins: 0, 
     #           api_id: api_id)
     # end
-  end
+ 
     def index
         @meetups = current_user.meetups
         

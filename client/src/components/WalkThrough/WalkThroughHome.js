@@ -40,7 +40,10 @@ color: red;
 class WalkThroughHome extends Component {
     state = {
         walkthroughs: [],
-        meetups: []
+        meetups: [],
+        meetup: {
+            name:""
+        }
     }
     async componentWillMount() {
         try {
@@ -59,12 +62,23 @@ class WalkThroughHome extends Component {
         }
 
     }
-    handleSubmit = async (index) => {
-        const id = index
-        const meetup = this.state.meetups[id]
-        console.log('I work')
-        console.log(meetup)
-
+    // handleSubmit = async (index) => {
+    //     const id = index
+    //     const meetup = this.state.meetups[id]
+    //     console.log(meetup)
+    //     this.setState({ meetup: meetup })
+    //     console.log(this.state.meetup)
+    //     // const res = await axios.post(`/api/meetups`, { 'meetups': this.state.meetups })
+    // }
+    async handleSubmit(index) {
+        try{
+         const id = index
+         const meetup = this.state.meetups[id]
+        this.setState({ meetup: meetup})
+        const res = await axios.post(`/api/meetups`, { 'meetup': this.state.meetup })
+        } catch (error){
+            console.log(error)
+        }
     }
     render() {
         return (

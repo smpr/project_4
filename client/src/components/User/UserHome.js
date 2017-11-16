@@ -45,13 +45,14 @@ class UserHome extends Component {
             address: "",
             country: "",
             zip: "",
-        }
+        },
+        meetups: []
     }
     async componentWillMount() {
         try {
-            const res = await axios.get('/api/infos')
-            console.log(res.data)
-            this.setState({ info: res.data })
+            const info = await axios.get('/api/infos')
+            const meetups = await axios.get('/api/meetups')
+            this.setState({ info: info.data, meetups: meetups.data })
             console.log(this.state.infos)
         } catch (error) {
             console.log(error)
@@ -75,6 +76,16 @@ class UserHome extends Component {
                     </div>
                     <div><Link to='/Users/edit'><button>Edit</button></Link></div>
                 </FormContainer>
+                <FormContainer>
+                    <div><h2>Meetups:</h2></div>
+                {this.state.meetups.map((meetup, index) => {
+                            return (
+                                <div><Link key={meetup._id} to={`/`}><b>{meetup.name}</b>
+                                </Link></div>
+
+                            )
+                        })}
+                    </FormContainer>
             </BodyContainer>
         );
     }
