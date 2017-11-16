@@ -66,23 +66,25 @@ class SignUpLogIn extends Component {
 
         return (
             <BodyContainer>
-                <FormContainer>
-                    <form>
-                        <div>
-                            <label htmlFor="email">E-mail: </label>
-                            <input onChange={this.handleChange} type="text" name="email" value={this.state.email} />
-                        </div>
-                        <div>
-                            <label htmlFor="password">Password: </label>
-                            <input onChange={this.handleChange} type="password" name="password" value={this.state.password} />
-                        </div>
-                        <div>
-                            <Link to={`/Users/Create`}><Button>Sign Up</Button></Link>
-                            <Button onClick={this.signIn}>Log In</Button>
-                        </div>
+                <Container>
+                    <FormContainer>
+                        <form>
+                            <div>
+                                <label htmlFor="email">E-mail: </label>
+                                <input onChange={this.handleChange} type="text" name="email" value={this.state.email} />
+                            </div>
+                            <div>
+                                <label htmlFor="password">Password: </label>
+                                <input onChange={this.handleChange} type="password" name="password" value={this.state.password} />
+                            </div>
+                            <div>
+                                <Link to={`/Users/Create`}><Button>Sign Up</Button></Link>
+                                <Button onClick={this.signIn}>Log In</Button>
+                            </div>
 
-                    </form>
-                </FormContainer>
+                        </form>
+                    </FormContainer>
+                </Container>
             </BodyContainer>
         )
     }

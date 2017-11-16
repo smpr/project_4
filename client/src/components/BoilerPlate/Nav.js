@@ -12,6 +12,7 @@ class Nav extends Component {
     render() {
         return (
             <BodyContainer>
+                
                 <div>
                     <Link to="/"><button>Home</button></Link>
                     <Link to="/categories"><button>Categories</button></Link>
