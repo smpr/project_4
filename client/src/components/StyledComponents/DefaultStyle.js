@@ -41,6 +41,17 @@ const LinkDiv = styled.div`
 display:flex;
 justify-content: space-between;
 `
-export { FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
+const NavContainer = styled.div`
+display:flex;
+justify-content: space-around;
+background-color: #191919;
+height: 8vh;
+color: white;
+` 
+const InnerForm = styled.div`
+display: flex;
+justify-content: space-around;
+`
+export { NavContainer, InnerForm, FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
 
 }

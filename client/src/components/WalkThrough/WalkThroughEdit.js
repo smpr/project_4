@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Button, InnerForm} from "../StyledComponents/DefaultStyle"
 
 class WalkthroughEdit extends Component {
     state = {
@@ -53,22 +53,34 @@ class WalkthroughEdit extends Component {
           }
         return (
             <BodyContainer>
+                <Container>
                 <FormContainer>
                     
                     <div>
                         <h2>Edit Walkthrough</h2>
                     </div>
+                    <InnerForm>
                     <div>
-                    Title: <input onChange={this.handleChange} name="name" value={this.state.walkthrough.name} />
+                        Title: 
                     </div>
                     <div>
-                        Description: <input onChange={this.handleChange} name="body" value={this.state.walkthrough.body} />
+                        <input onChange={this.handleChange} name="name" value={this.state.walkthrough.name} />
                     </div>
+                    </InnerForm>
+                    <InnerForm>
+                    <div>
+                        Description: 
+                    </div>
+                    <div>
+                        <input onChange={this.handleChange} name="body" value={this.state.walkthrough.body} />
+                    </div>
+                    </InnerForm>
                     <div>
                         <button onClick={this.deleteWalk}>Delete</button>
                         <button onClick={this.editWalk}>Edit</button>
                     </div>
                 </FormContainer>
+                </Container>
             </BodyContainer>
         );
     }
