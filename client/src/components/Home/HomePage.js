@@ -21,6 +21,9 @@ justify-content: space-around;
 align-content: center;
 height: 100px;
 background-color: #4B4B4B;
+margin: 10px;
+padding: 20px;
+text-align: center;
 `
 
 const Button = styled.button`

@@ -23,6 +23,8 @@ align-content: center;
 width: 25vw;
 color: white;
 background-color: #4B4B4B;
+padding: 20px;
+text-align: center;
 a {
     color: white;
     text-decoration: none;
