@@ -1,34 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
-import styled from 'styled-components'
+import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
 
-const BodyContainer = styled.div`
-display:flex;
-justify-content: space-around;
-background-color: #323232;
-height: 100vh;
-`
-const Container = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-content: center;
-`
-const FormContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-content: center;
-height: 100px;
-background-color: #4B4B4B;
-margin: 10px;
-padding: 20px;
-text-align: center;
-`
-
-const Button = styled.button`
-color: red;
-`
 class SignUpLogIn extends Component {
 
     state = {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+
 class WalkthroughEdit extends Component {
     state = {
         walkthrough: {},
@@ -50,7 +52,7 @@ class WalkthroughEdit extends Component {
             return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`} />
           }
         return (
-            <div>
+            <BodyContainer>
                 <div>
                     <br />
                     <h2><b>Edit Walkthrough</b></h2>
@@ -66,7 +68,7 @@ class WalkthroughEdit extends Component {
                     <button onClick={this.deleteWalk}>Delete</button>
                     <button onClick={this.editWalk}>Edit</button>
                 </div>
-            </div>
+            </BodyContainer>
         );
     }
 }

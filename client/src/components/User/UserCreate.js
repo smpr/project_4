@@ -1,42 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
-import styled from 'styled-components'
+import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
 
-const BodyContainer = styled.div`
-display:flex;
-justify-content: space-around;
-background-color: #323232;
-height: 100vh;
-`
-const LinkDiv = styled.div`
-display:flex;
-justify-content: space-between;
-`
-const Container = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-content: center;
-`
-const FormContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-content: center;
-width: 25vw;
-color: white;
-background-color: #4B4B4B;
-a {
-    color: white;
-    text-decoration: none;
-}
-
-`
-
-const Button = styled.button`
-color: red;
-`
 class UserCreate extends Component {
     state = {
         info: {

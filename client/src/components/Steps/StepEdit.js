@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
 
 class StepEdit extends Component {
     state = {

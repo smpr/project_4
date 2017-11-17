@@ -32,7 +32,15 @@ a {
 const Button = styled.button`
 color: red;
 `
-
-export { FormContainer , Container, BodyContainer, Button
+const ImgContainer = styled.div`
+img {
+width: 25vw;
+}
+`
+const LinkDiv = styled.div`
+display:flex;
+justify-content: space-between;
+`
+export { FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
 
 }
