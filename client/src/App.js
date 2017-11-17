@@ -50,6 +50,7 @@ class App extends Component {
       console.log(error)
     }
   }
+  //this is devise sign up that will be passed down via props
   signUp = async (email, password, password_confirmation) => {
     try {
         const payload = {
@@ -106,6 +107,7 @@ class App extends Component {
       console.log(error)
     }
   }
+  //grabs all categories to be passed down via props
   getCategories = async () => {
     try {
       const response = await axios.get('/api/categories')

@@ -10,8 +10,6 @@ class Api::StepsController < ApplicationController
     def create
          @walkthrough = Walkthrough.find params[:walkthrough_id]
         @walkthrough.steps.create(steps_params)
-       puts "File saved"
-
       end
       def show
         @step = Step.find(params[:id])
