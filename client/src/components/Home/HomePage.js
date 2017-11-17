@@ -54,8 +54,8 @@ class SignUpLogIn extends Component {
                                 <input onChange={this.handleChange} type="password" name="password" value={this.state.password} />
                             </div>
                             <div>
-                                <Link to={`/Users/Create`}><Button>Sign Up</Button></Link>
-                                <Button onClick={this.signIn}>Log In</Button>
+                                <Link to={`/Users/Create`}><button>Sign Up</button></Link>
+                                <button onClick={this.signIn}>Log In</button>
                             </div>
 
                         </form>
