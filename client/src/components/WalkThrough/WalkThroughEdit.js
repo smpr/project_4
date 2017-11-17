@@ -53,21 +53,22 @@ class WalkthroughEdit extends Component {
           }
         return (
             <BodyContainer>
-                <div>
-                    <br />
-                    <h2><b>Edit Walkthrough</b></h2>
-                    <br />
+                <FormContainer>
+                    
+                    <div>
+                        <h2>Edit Walkthrough</h2>
+                    </div>
+                    <div>
                     Title: <input onChange={this.handleChange} name="name" value={this.state.walkthrough.name} />
-
+                    </div>
                     <div>
                         Description: <input onChange={this.handleChange} name="body" value={this.state.walkthrough.body} />
                     </div>
                     <div>
-                        Links:<input onChange={this.handleChange} name="links" value={this.state.walkthrough.links} />
+                        <button onClick={this.deleteWalk}>Delete</button>
+                        <button onClick={this.editWalk}>Edit</button>
                     </div>
-                    <button onClick={this.deleteWalk}>Delete</button>
-                    <button onClick={this.editWalk}>Edit</button>
-                </div>
+                </FormContainer>
             </BodyContainer>
         );
     }
