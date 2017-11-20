@@ -1,8 +1,7 @@
 trello: https://trello.com/b/yMWjxNRw/wdi-project-4<br />
 WireFrame: https://i.imgur.com/KqniGlc.jpg <br />
-ERD: https://i.imgur.com/0m0QE8p.jpg<br/>
 heroku: https://glenn-brown-project41.herokuapp.com/<br/>
-
+<center><h3>ERD</h3></center>
 <img src="/ERD.png" />
 <h1>Walkthrough Resource Page: Project 4</h1><br />
 <h3>Project Requirements:</h3><br />
