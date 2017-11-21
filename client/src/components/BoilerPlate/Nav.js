@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, Button, NavContainer} from "../StyledComponents/DefaultStyle"
 class Nav extends Component {
+    state = {
+
+        redirectToLogin: false
+    }
+    
     render() {
+        if (this.state.redirectToLogin) {
+            return <Redirect to={`/`} />
+        }
         return (
             <NavContainer>
 

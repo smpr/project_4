@@ -100,9 +100,8 @@ class App extends Component {
       await axios.delete('/auth/sign_out')
 
       clearAuthTokens();
-      console.log("sign out")
 
-      this.setState({ signedIn: false })
+      this.setState({ signedIn: false, redirectToLogin: true })
     } catch (error) {
       console.log(error)
     }
