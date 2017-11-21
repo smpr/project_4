@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Button, ListDiv} from "../StyledComponents/DefaultStyle"
 
 
 class CatHome extends Component {
@@ -26,13 +26,14 @@ class CatHome extends Component {
             <BodyContainer>
                 <Container>
                     <FormContainer>
-                        <div>
+                        <ListDiv>
                             <div> 
                                 Please Select a Category
                             </div>
                             <div>
                                 <Link to="/categories/create"><button>Create New Category</button></Link>
                             </div>
+                           <div>
                             <ul>
                             {this.state.categories.map((category, index) => {
                                 return (
@@ -44,7 +45,8 @@ class CatHome extends Component {
                                         )
                                         })}
                             </ul>
-                        </div>
+                            </div>
+                        </ListDiv>
                     </FormContainer>
                 </Container>
                
