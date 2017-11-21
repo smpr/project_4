@@ -60,7 +60,7 @@ const NavContainer = styled.div`
 display:flex;
 justify-content: space-around;
 background-color: #191919;
-height: 8vh;
+height: 12vh;
 color: white;
 box-shadow: 10px 10px 5px #888888;
 ` 

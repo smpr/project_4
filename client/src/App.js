@@ -3,6 +3,8 @@ import styles from './App.css';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from "./util/SessionHeaderUtil"
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Header from './components/BoilerPlate/Header'
 import Nav from './components/BoilerPlate/Nav'
@@ -130,6 +132,7 @@ class App extends Component {
       />
     )
     return (
+      <MuiThemeProvider>
       <Router>
         <div>
 
@@ -161,6 +164,7 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
+      </MuiThemeProvider>
     );
   }
 }

@@ -10,15 +10,7 @@ class SignUpLogIn extends Component {
         password_confirmation: '',
         redirectToCategoryPage: false
     }
-//devise function that allows user to sign up
-    // signUp = (event) => {
-    //     event.preventDefault()
-    //     this.props.signUp(
-    //         this.state.email,
-    //         this.state.password,
-    //         this.state.password_confirmation
-    //     )
-    // }
+
 //devise function that allows the user thats already been create to sign in
     signIn = (event) => {
         event.preventDefault()
