@@ -83,12 +83,10 @@ ActiveRecord::Schema.define(version: 20171113214649) do
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
-    t.index ["user_id"], name: "index_users_on_user_id"
   end
 
   create_table "walkthroughs", force: :cascade do |t|
@@ -105,6 +103,5 @@ ActiveRecord::Schema.define(version: 20171113214649) do
   add_foreign_key "infos", "users"
   add_foreign_key "meetups", "users"
   add_foreign_key "steps", "walkthroughs"
-  add_foreign_key "users", "users"
   add_foreign_key "walkthroughs", "categories"
 end

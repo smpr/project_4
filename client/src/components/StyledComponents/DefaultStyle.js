@@ -41,7 +41,9 @@ const Button = styled.button`
 :focus {
     outline: none;
     color:white;
-    box-shadow: 0 0 0 0
+    box-shadow: 0 0 0 0;
+    background-color:#191919;
+
 }
 
 `
