@@ -7,15 +7,15 @@ class Nav extends Component {
             <NavContainer>
 
                 <div>
-                    <Link to="/"><button>Home</button></Link>
-                    <Link to="/categories"><button>Categories</button></Link>
+                    <Link to="/"><Button>Home</Button></Link>
+                    <Link to="/categories"><Button>Categories</Button></Link>
                 </div>
                 <div>
                     <h3>Walkthrough Creator</h3>
                 </div>
                 <div>
-                    <Link to='/Users/Home'><button>User Home</button></Link>
-                    <button onClick={this.props.signOut}>Sign Out</button>
+                    <Link to='/Users/Home'><Button>User Home</Button></Link>
+                    <Button onClick={this.props.signOut}>Sign Out</Button>
                 </div>
             </NavContainer>
         );

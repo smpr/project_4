@@ -33,8 +33,17 @@ a {
 }
 
 `
+
 const Button = styled.button`
-color: red;
+:hover {
+    box-shadow: 0 7px 7px 0 rgba(255,255,255,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+:focus {
+    outline: none;
+    color:white;
+    box-shadow: 0 0 0 0
+}
+
 `
 const ImgContainer = styled.div`
 img {
