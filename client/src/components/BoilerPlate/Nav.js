@@ -18,15 +18,15 @@ class Nav extends Component {
             <NavContainer>
               
                     <div>
-                        <Link to="/"><RaisedButton label="Home" style={Style} /></Link>
-                        <Link to="/categories"><RaisedButton label="Categories" style={Style} /></Link>
+                        <RaisedButton href= "/" label="Home" style={Style} />
+                        <RaisedButton href= "/categories" label="Categories" style={Style} />
                     </div>
                     <div>
                         <h3>Walkthrough Creator</h3>
                     
                     </div>
                     <div>
-                        <Link to='/Users/Home'><RaisedButton label="User Home" style={Style} /></Link>
+                        <RaisedButton href= "/Users/Home" label="User Home" style={Style} />
                         <RaisedButton onClick={this.props.signOut} label="Log Out" style={Style} />
                     </div>
               

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 class CatCreate extends Component {
     state = {
@@ -42,14 +43,16 @@ class CatCreate extends Component {
                             <h2>Create a Category:</h2>
                         </div>
                         <div>
-                            <input
-                                placeholder='Category Name'
+                        <TextField
+                                hintText="Category Name"
                                 onChange={this.handleChange}
                                 name="title"
                                 type="text"
                                 required
 
-                                value={this.state.category.title} />
+                                value={this.state.category.title}
+                                />
+        
                         </div>
                         <div>
                         <RaisedButton onClick={this.handleSubmit} label="Create Category" style={Style} />

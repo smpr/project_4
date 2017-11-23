@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 class UserEdit extends Component {
     state = {
@@ -59,20 +60,47 @@ class UserEdit extends Component {
                         <h2>Edit User</h2>
                         
                         <div>
-                            Address: <input onChange={this.handleChange} name="address" value={this.state.info.address} />
+                            Address:     <TextField
+                                             hintText={this.state.info.address}
+                                             onChange={this.handleChange}
+                                             name="address"
+                                             value={this.state.info.address}
+                                             />
                         </div>
                         <div>
-                            City: <input onChange={this.handleChange} name="city" value={this.state.info.city} />
+                            City: <TextField
+                                             hintText={this.state.info.city}
+                                             onChange={this.handleChange}
+                                             name="city"
+                                             value={this.state.info.city}
+                                             />
                         </div>
                         <div>
-                            State:<input onChange={this.handleChange} name="state" value={this.state.info.state} />
+                            State: <TextField
+                                             hintText={this.state.info.state}
+                                             onChange={this.handleChange}
+                                             name="state"
+                                             value={this.state.info.state}
+                                             />
                         </div>
                         <div>
-                            Zip:<input onChange={this.handleChange} name="zip" value={this.state.info.zip} />
+                            Zip: <TextField
+                                             hintText={this.state.info.zip}
+                                             onChange={this.handleChange}
+                                             name="zip"
+                                             value={this.state.info.zip}
+                                             />
                         </div>
+                        
                         <div>
-                            Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
+                            Country:<TextField
+                                             hintText={this.state.info.country}
+                                             onChange={this.handleChange}
+                                             name="country"
+                                             value={this.state.info.country}
+                                             />
                         </div>
+                        
                         <div>
                             <RaisedButton onClick={this.editInfo} label="Edit" style={Style} />
                         </div>
