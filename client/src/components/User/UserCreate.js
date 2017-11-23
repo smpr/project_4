@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
 class UserCreate extends Component {
     state = {
@@ -102,7 +103,7 @@ class UserCreate extends Component {
                                     value={this.state.info.password_confirmation} />
                             </div>
                             <div>
-                                <button onClick={this.signUp}>Next</button>
+                                <RaisedButton onClick={this.signUp} label="Next" style={Style} />
                             </div>
                         </FormContainer>
                 </Container>
@@ -118,7 +119,7 @@ class UserCreate extends Component {
                             Zip:<input onChange={this.handleChange} name="zip" value={this.state.info.zip} />
                         </div>
                         <div>
-                            <button onClick={this.promptToThirdForm}>Next</button>
+                            <RaisedButton onClick={this.promptToThirdForm} label="Next" style={Style} />
                         </div>
                     </FormContainer>
                 </Container>
@@ -138,7 +139,7 @@ class UserCreate extends Component {
                             Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
                         </div>
                         <div>
-                            <button onClick={this.promptToFourthForm}>Next</button>
+                            <RaisedButton onClick={this.promptToFourthForm} label="Next" style={Style} />
                         </div>
                     </FormContainer>
                 </Container>
@@ -169,7 +170,7 @@ class UserCreate extends Component {
                             Country: {this.state.info.country}
                         </div>
                         <div>
-                            <button onClick={this.handleSubmit}>Submit</button>
+                            <RaisedButton onClick={this.handleSubmit} label="Submit" style={Style} />
                         </div>
                     </FormContainer>
                 </Container>

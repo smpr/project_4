@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
-
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 class componentName extends Component {
@@ -50,14 +50,14 @@ async componentWillMount() {
                 <Container>
                     <FormContainer>
                         <div>
-                            <div><center><Link to='/Users/Home'><button>Back To User</button></Link></center></div>
+                           
                             <div><h2>Group:</h2> {this.state.meetup.name}</div>
                             <div><h3>City: </h3> {this.state.meetup.city}</div>
                             <div><h3>Description: </h3> {this.state.meetup.description}</div>
                             <div><h3>Website: </h3><a href={this.state.meetup.link}>{this.state.meetup.link}</a></div>
                             <div><Link to='/Users/Home'>
-                                <button>Back To User</button></Link>
-                                <button onClick={this.deleteMeetup}>Delete Meetup</button>
+                                <RaisedButton label="Back" style={Style} /></Link>
+                                <RaisedButton onClick={this.deleteMeetup} label="Delete" style={Style} />
                             </div>
                         </div>
                     </FormContainer>
