@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Button, InnerForm} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style, InnerForm} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
 class WalkthroughEdit extends Component {
     state = {
@@ -76,8 +77,8 @@ class WalkthroughEdit extends Component {
                     </div>
                     </InnerForm>
                     <div>
-                        <button onClick={this.deleteWalk}>Delete</button>
-                        <button onClick={this.editWalk}>Edit</button>
+                        <RaisedButton onClick={this.deleteWalk} label="Delete" style={Style} />
+                        <RaisedButton onClick={this.editWalk} label="Edit" style={Style} />
                     </div>
                 </FormContainer>
                 </Container>

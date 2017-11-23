@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
 class StepEdit extends Component {
     state = {
@@ -74,8 +75,8 @@ class StepEdit extends Component {
                 <div>
                     Links:<input onChange={this.handleChange} name="links" value={this.state.step.links} />
                 </div>
-                <button onClick={this.deleteStep}>Delete</button>
-                <button onClick={this.editStep}>Edit</button>
+                <RaisedButton onClick={this.deleteStep} label="Delete" style={Style} />
+                <RaisedButton onClick={this.editStep} label="Edit" style={Style} />
             </div>
         );
     }
