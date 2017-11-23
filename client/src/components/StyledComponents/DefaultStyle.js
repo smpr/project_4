@@ -72,8 +72,9 @@ justify-content: space-around;
 `
 const ListDiv = styled.div`
 display:flex;
-justify-content: left;
-align-content: left;
+align-items: center;
+justify-content: center;
+align-content: center;
 flex-direction: column;
 `
 export { NavContainer, ListDiv, InnerForm, FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
