@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
 
+import FlatButton from 'material-ui/FlatButton';
+
+
+
 class SignUpLogIn extends Component {
 
     state = {
@@ -36,6 +40,8 @@ class SignUpLogIn extends Component {
             <BodyContainer>
                 <Container>
                     <FormContainer>
+  
+                    
                         <form>
                             <div>
                                 <label htmlFor="email">E-mail: </label>
@@ -51,7 +57,7 @@ class SignUpLogIn extends Component {
                             </div>
 
                         </form>
-                    </FormContainer>
+                   </FormContainer>
                 </Container>
             </BodyContainer>
         )

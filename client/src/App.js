@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-ro
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from "./util/SessionHeaderUtil"
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 import Header from './components/BoilerPlate/Header'
 import Nav from './components/BoilerPlate/Nav'
