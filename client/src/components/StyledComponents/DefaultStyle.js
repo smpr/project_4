@@ -58,6 +58,7 @@ justify-content: space-between;
 `
 const NavContainer = styled.div`
 display:flex;
+align-items: center;
 justify-content: space-around;
 background-color: #191919;
 height: 12vh;

@@ -4,8 +4,11 @@ import {Container, FormContainer, BodyContainer, Button, NavContainer} from "../
 import RaisedButton from 'material-ui/RaisedButton';
 
 const style = {
-    margin: 4,
-    
+    // width: '10%',
+    height: '95%',
+    margin: '10px',
+    border: '.5px solid #37474F',
+    backgroundColor: '#37474F'
   };
 class Nav extends Component {
     state = {
@@ -20,19 +23,20 @@ class Nav extends Component {
         }
         return (
             <NavContainer>
-
-                <div>
-                    <Link to="/"><RaisedButton label="Home" style={style} /></Link>
-                    <Link to="/categories"><RaisedButton label="Categories" style={style} /></Link>
-                </div>
-                <div>
-                    <h3>Walkthrough Creator</h3>
-                  
-                </div>
-                <div>
-                    <Link to='/Users/Home'><RaisedButton label="User Home" style={style} /></Link>
-                    <RaisedButton onClick={this.props.signOut} label="Log Out" style={style} />
-                </div>
+              
+                    <div>
+                        <Link to="/"><RaisedButton label="Home" style={style} /></Link>
+                        <Link to="/categories"><RaisedButton label="Categories" style={style} /></Link>
+                    </div>
+                    <div>
+                        <h3>Walkthrough Creator</h3>
+                    
+                    </div>
+                    <div>
+                        <Link to='/Users/Home'><RaisedButton label="User Home" style={style} /></Link>
+                        <RaisedButton onClick={this.props.signOut} label="Log Out" style={style} />
+                    </div>
+              
             </NavContainer>
         );
     }
