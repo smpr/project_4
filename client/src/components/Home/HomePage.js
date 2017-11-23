@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
-import FlatButton from 'material-ui/FlatButton';
 
-
+const style = {
+    // width: '10%',
+    height: '95%',
+    margin: '10px',
+    border: '.5px solid #37474F',
+    backgroundColor: '#37474F'
+  };
 
 class SignUpLogIn extends Component {
 
@@ -44,6 +50,9 @@ class SignUpLogIn extends Component {
                     
                         <form>
                             <div>
+                                <h2>Log In</h2>
+                            </div>
+                            <div>
                                 <label htmlFor="email">E-mail: </label>
                                 <input onChange={this.handleChange} type="text" name="email" value={this.state.email} />
                             </div>
@@ -52,8 +61,8 @@ class SignUpLogIn extends Component {
                                 <input onChange={this.handleChange} type="password" name="password" value={this.state.password} />
                             </div>
                             <div>
-                                <Link to={`/Users/Create`}><Button>Sign Up</Button></Link>
-                                <Button onClick={this.signIn}>Log In</Button>
+                                <Link to={`/Users/Create`}><RaisedButton label="Sign up" style={style} /></Link>
+                                <RaisedButton onClick={this.signIn} label="Login" style={style} />
                             </div>
 
                         </form>

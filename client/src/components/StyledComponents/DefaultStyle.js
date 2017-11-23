@@ -61,7 +61,8 @@ display:flex;
 align-items: center;
 justify-content: space-around;
 background-color: #191919;
-height: 12vh;
+
+height: 5vh;
 color: white;
 box-shadow: 10px 10px 5px #888888;
 ` 
