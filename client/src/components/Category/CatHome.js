@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button, ListDiv} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Button, ListDiv, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
-const style = {
-    // width: '10%',
-    height: '95%',
-    margin: '10px',
-    border: '.5px solid #37474F',
-    backgroundColor: '#37474F'
-  };
+
 class CatHome extends Component {
     state = {
         categories: [],
@@ -39,7 +33,7 @@ class CatHome extends Component {
                                     <h3>Please Select a Category</h3>
                                 </div>
                                 <div>
-                                    <Link to="/categories/create"><RaisedButton label="New Category" style={style} /></Link>
+                                    <Link to="/categories/create"><RaisedButton label="New Category" style={Style} /></Link>
                                 </div>
                                 <div>
                                 <ul>

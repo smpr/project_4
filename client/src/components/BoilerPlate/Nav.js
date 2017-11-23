@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button, NavContainer} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Button, NavContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
-const style = {
-    // width: '10%',
-    height: '95%',
-    margin: '10px',
-    border: '.5px solid #37474F',
-    backgroundColor: '#37474F'
-  };
 class Nav extends Component {
     state = {
 
@@ -25,16 +18,16 @@ class Nav extends Component {
             <NavContainer>
               
                     <div>
-                        <Link to="/"><RaisedButton label="Home" style={style} /></Link>
-                        <Link to="/categories"><RaisedButton label="Categories" style={style} /></Link>
+                        <Link to="/"><RaisedButton label="Home" style={Style} /></Link>
+                        <Link to="/categories"><RaisedButton label="Categories" style={Style} /></Link>
                     </div>
                     <div>
                         <h3>Walkthrough Creator</h3>
                     
                     </div>
                     <div>
-                        <Link to='/Users/Home'><RaisedButton label="User Home" style={style} /></Link>
-                        <RaisedButton onClick={this.props.signOut} label="Log Out" style={style} />
+                        <Link to='/Users/Home'><RaisedButton label="User Home" style={Style} /></Link>
+                        <RaisedButton onClick={this.props.signOut} label="Log Out" style={Style} />
                     </div>
               
             </NavContainer>

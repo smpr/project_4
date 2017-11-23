@@ -77,6 +77,13 @@ justify-content: center;
 align-content: center;
 flex-direction: column;
 `
-export { NavContainer, ListDiv, InnerForm, FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
+const Style = {
+    // width: '10%',
+    height: '95%',
+    margin: '10px',
+    border: '.5px solid #37474F',
+    backgroundColor: '#37474F'
+  };
+export { Style, NavContainer, ListDiv, InnerForm, FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
 
 }
