@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
 class UserEdit extends Component {
     state = {
@@ -74,7 +75,7 @@ class UserEdit extends Component {
                             Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
                         </div>
                         <div>
-                            <button onClick={this.editInfo}>Edit</button>
+                            <RaisedButton onClick={this.editInfo} label="Edit" style={Style} />
                         </div>
                     </FormContainer>
                 </Container>

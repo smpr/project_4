@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
-
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 class StepShow extends Component {
     state = {
         step: {}
@@ -31,8 +31,8 @@ class StepShow extends Component {
                             <h3>Step:</h3> {this.state.step.title}
                         </div>
                         <div>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${this.props.match.params.stepId}/edit`}><button>Edit</button></Link>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`}><button>Back</button></Link>
+                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${this.props.match.params.stepId}/edit`}><RaisedButton label="Edit" style={Style} /></Link>
+                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`}><RaisedButton label="Back" style={Style} /></Link>
                         </div>
                     </FormContainer>
                   

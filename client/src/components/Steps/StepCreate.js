@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
-
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 class StepCreate extends Component {
     state = {
         step: {},
@@ -32,9 +32,9 @@ class StepCreate extends Component {
         }
         return (
             <BodyContainer>
+                <Container>
 
-
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <FormContainer>
                         <div><h2>New Step</h2></div>
                         <div>
@@ -68,12 +68,12 @@ class StepCreate extends Component {
                                 value={this.state.step.links} />
                         </div>
                         <div>
-                            <button>Create Step</button>
+                        <RaisedButton  onClick={this.handleSubmit} label="Submit" style={Style} />
                         </div>
                     </FormContainer>
                 </form>
 
-
+                </Container>
             </BodyContainer>
         );
     }

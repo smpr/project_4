@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import sample from './samplemap.png'
-import {Container, FormContainer, BodyContainer, Button, ImgContainer} from "../StyledComponents/DefaultStyle"
-
+import {Container, FormContainer, BodyContainer, Style, ImgContainer} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 class UserHome extends Component {
@@ -58,7 +58,7 @@ class UserHome extends Component {
                             Country: {this.state.info.country}<br />
                             Zip: {this.state.info.zip}<br />
                         
-                        <div><Link to='/Users/edit'><button>Edit</button></Link></div>
+                        <div><Link to='/Users/edit'><RaisedButton label="Edit" style={Style} /></Link></div>
                         </div>
                     </FormContainer>
                 </Container>

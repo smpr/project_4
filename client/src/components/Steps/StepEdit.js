@@ -63,6 +63,9 @@ class StepEdit extends Component {
             return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`} />
           }
         return (
+            <BodyContainer>
+                <Container>
+                    <FormContainer>
             <div>
                 <br />
                 <h2><b>Edit Step</b></h2>
@@ -78,6 +81,9 @@ class StepEdit extends Component {
                 <RaisedButton onClick={this.deleteStep} label="Delete" style={Style} />
                 <RaisedButton onClick={this.editStep} label="Edit" style={Style} />
             </div>
+            </FormContainer>
+            </Container>
+            </BodyContainer>
         );
     }
 }
