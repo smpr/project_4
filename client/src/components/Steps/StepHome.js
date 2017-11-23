@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
 class StepHome extends Component {
     state = {
@@ -41,8 +42,8 @@ class StepHome extends Component {
                         <div><b>Description:</b> {this.state.info.body}</div>
                         
                         <div>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}><button>Edit</button></Link>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`}><button>Back</button></Link>
+                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}><RaisedButton label="Edit" style={Style} /></Link>
+                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`}><RaisedButton label="Back" style={Style} /></Link>
                         </div>
                     </FormContainer>
                    
@@ -54,7 +55,7 @@ class StepHome extends Component {
                             <div>
                             <h2>Steps:</h2>
                             <div>
-                                <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}><button>Add a Step</button></Link>
+                                <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}><RaisedButton label="New Step" style={Style} /></Link>
                             </div>
                             {this.state.steps.map((step, index) => {
                             return (
