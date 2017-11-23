@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
+import { BrowserRouter as Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';

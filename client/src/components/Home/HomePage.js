@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
 

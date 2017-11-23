@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button, ListDiv, Style} from "../StyledComponents/DefaultStyle"
+import { Link } from 'react-router-dom'
+import {Container, FormContainer, BodyContainer, ListDiv, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
 

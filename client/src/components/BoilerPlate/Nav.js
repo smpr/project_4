@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button, NavContainer, Style} from "../StyledComponents/DefaultStyle"
+import { BrowserRouter as Link, Redirect } from 'react-router-dom'
+import { NavContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
 class Nav extends Component {

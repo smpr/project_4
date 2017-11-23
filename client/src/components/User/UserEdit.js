@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
@@ -45,7 +44,7 @@ class UserEdit extends Component {
     }
     handleSubmit = async (event) => {
         event.preventDefault()
-        const res = await axios.post(`/api/infos`, { 'info': this.state.info })
+        await axios.post(`/api/infos`, { 'info': this.state.info })
         this.setState({ redirectToHome: true })
 
     }

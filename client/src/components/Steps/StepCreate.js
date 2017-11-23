@@ -21,7 +21,7 @@ class StepCreate extends Component {
         event.preventDefault()
         const catId = this.props.match.params.categoryId
         const walkId = this.props.match.params.walkthroughId
-        const res = await axios.post(`/api/categories/${catId}/walkthroughs/${walkId}/steps`, { 'step': this.state.step })
+        await axios.post(`/api/categories/${catId}/walkthroughs/${walkId}/steps`, { 'step': this.state.step })
 
         this.setState({ redirectToWalkthroughs: true })
 

@@ -8,10 +8,6 @@ background-color: #323232;
 
 `
 
-
-const Button = styled.button`
-color: red;
-`
 class Header extends Component {
     render() {
         return (

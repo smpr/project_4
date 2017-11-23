@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
-import styled from 'styled-components'
-import {Container, FormContainer, BodyContainer, Button, LinkDiv, Style} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, LinkDiv, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 class WalkThroughHome extends Component {
     state = {
@@ -35,7 +34,7 @@ class WalkThroughHome extends Component {
          const id = index
          const meetup = this.state.meetups[id]
         this.setState({ meetup: meetup})
-        const res = await axios.post(`/api/meetups`, { meetup: this.state.meetup })
+        await axios.post(`/api/meetups`, { meetup: this.state.meetup })
         } catch (error){
             console.log(error)
         }

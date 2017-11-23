@@ -35,7 +35,7 @@ async componentWillMount() {
     //allows user to delete this meetup
     deleteMeetup = async () => {
         const meetId = this.props.match.params.meetId
-    const res = await axios.delete(`/api/meetups/${meetId}`)
+    await axios.delete(`/api/meetups/${meetId}`)
     //redirect back to the user page after the id has been deleted
     this.setState({ redirectToUserHome: true })
 

@@ -50,7 +50,7 @@ class StepEdit extends Component {
         const catId = this.props.match.params.categoryId
         const walkId = this.props.match.params.walkthroughId
         const stepId = this.props.match.params.stepId
-    const res = await axios.delete(`/api/categories/${catId}/walkthroughs/${walkId}/steps/${stepId}`)
+        await axios.delete(`/api/categories/${catId}/walkthroughs/${walkId}/steps/${stepId}`)
     //redirect back to the user page after the id has been deleted
     this.setState({ redirectToWalkthrough: true })
 

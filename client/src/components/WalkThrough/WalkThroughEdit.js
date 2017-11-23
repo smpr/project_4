@@ -41,7 +41,7 @@ class WalkthroughEdit extends Component {
         deleteWalk = async () => {
             const catId = this.props.match.params.categoryId
             const walkId = this.props.match.params.walkthroughId
-            const res = await axios.delete(`/api/categories/${catId}/walkthroughs/${walkId}`)
+            await axios.delete(`/api/categories/${catId}/walkthroughs/${walkId}`)
             //redirect back to the user page after the id has been deleted
             this.setState({ redirectToWalkthrough: true })
 

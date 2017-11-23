@@ -29,7 +29,7 @@ class WalkThroughCreate extends Component {
         event.preventDefault()
         const catId = this.props.match.params.categoryId
 
-        const res = await axios.post(`/api/categories/${catId}/walkthroughs`, { 'walkthrough': this.state.walkthrough })
+        await axios.post(`/api/categories/${catId}/walkthroughs`, { 'walkthrough': this.state.walkthrough })
 
         this.setState({ redirectToHome: true })
 

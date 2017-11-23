@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -64,7 +64,7 @@ class UserCreate extends Component {
         }
         handleSubmit = async (event) => {
             event.preventDefault()
-            const res = await axios.post(`/api/infos`, this.state.info)
+            await axios.post(`/api/infos`, this.state.info)
             this.setState({ togglePage4:false, togglePage6: true })
             console.log("submit hit")
 
@@ -198,10 +198,7 @@ class UserCreate extends Component {
                 {userView}
             </div>
         );
-        return (
-            <div>
-            </div>
-        );
+
     }
 }
 

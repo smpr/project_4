@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import sample from './samplemap.png'
 import {Container, FormContainer, BodyContainer, Style, ImgContainer} from "../StyledComponents/DefaultStyle"
@@ -77,7 +77,7 @@ class UserHome extends Component {
                                 })}
                         </div>
                             <ImgContainer>
-                            <img src={sample} />
+                            <img src={sample} alt="sample"/>
                                 </ImgContainer>
                         </FormContainer>
                 </Container>
