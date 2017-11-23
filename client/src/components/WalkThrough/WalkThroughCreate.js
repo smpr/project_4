@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 
 class WalkThroughCreate extends Component {
     state = {
@@ -39,7 +40,8 @@ class WalkThroughCreate extends Component {
         }
         return (
             <BodyContainer>
-                <form onSubmit={this.handleSubmit}>
+                <Container>
+                <form>
                     <FormContainer>
                         <div>
                         <div>
@@ -67,11 +69,12 @@ class WalkThroughCreate extends Component {
                         </div>
 
                         <div>
-                            <button>Create Category</button>
+                        <RaisedButton  onClick={this.handleSubmit}label="Submit" style={Style} />
                         </div>
                         </div>
                     </FormContainer>
                 </form>
+                </Container>
             </BodyContainer>
         );
     }
