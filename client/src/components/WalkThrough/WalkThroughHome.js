@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
-import {Container, FormContainer, BodyContainer, Button, LinkDiv} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Button, LinkDiv, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
 class WalkThroughHome extends Component {
     state = {
         walkthroughs: [],
@@ -47,7 +48,7 @@ class WalkThroughHome extends Component {
                 <FormContainer>
                     <div>
                     <div><h2>Walkthroughs:</h2>
-                    <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}><button>Create New Walkthrough</button></Link>
+                    <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}><RaisedButton label="New Walkthrough" style={Style} /></Link>
                     </div>
                     <br/>
                     <div>

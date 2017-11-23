@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Button} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import RaisedButton from 'material-ui/RaisedButton';
+
 class CatCreate extends Component {
     state = {
         category: [
@@ -33,7 +35,7 @@ class CatCreate extends Component {
         return (
             <BodyContainer>
                 <Container>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <FormContainer>
                         <div>
                         <div>
@@ -50,7 +52,7 @@ class CatCreate extends Component {
                                 value={this.state.category.title} />
                         </div>
                         <div>
-                            <button>Create Category</button>
+                        <RaisedButton onClick={this.handleSubmit} label="Create Category" style={Style} />
                         </div>
                         </div>
                     </FormContainer>
