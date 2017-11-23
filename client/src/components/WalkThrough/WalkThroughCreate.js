@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 class WalkThroughCreate extends Component {
     state = {
@@ -47,25 +48,29 @@ class WalkThroughCreate extends Component {
                         <div>
                             <h2>New Walkthrough</h2>
                         </div>
-                        <div>
-                            <input
-                                placeholder='Category Name'
+                        <div> 
+                            <TextField
+                                hintText="Walkthough Name"
                                 onChange={this.handleChange}
                                 name="name"
                                 type="text"
                                 required
 
-                                value={this.state.walkthrough.name} />
+                                value={this.state.walkthrough.name}
+                                />
+                            
                         </div>
                         <div>
-                            <input
-                                placeholder='Description'
+                        <TextField
+                                hintText="Walkthough Description"
                                 onChange={this.handleChange}
                                 name="body"
                                 type="text"
+                                required
 
+                                value={this.state.walkthrough.body}
+                                />
 
-                                value={this.state.walkthrough.body} />
                         </div>
 
                         <div>
