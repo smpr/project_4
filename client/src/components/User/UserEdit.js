@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+
 
 class UserEdit extends Component {
     state = {
@@ -60,32 +61,44 @@ class UserEdit extends Component {
                         <h2>Edit User</h2>
                         
                         <div>
-                            Address:     <TextField
+                             <TextField
                                              hintText={this.state.info.address}
+                                             floatingLabelText="Address:"
+                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                              onChange={this.handleChange}
                                              name="address"
                                              value={this.state.info.address}
                                              />
                         </div>
                         <div>
-                            City: <TextField
+                            <TextField
                                              hintText={this.state.info.city}
+                                             floatingLabelText="City:"
+                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                              onChange={this.handleChange}
                                              name="city"
                                              value={this.state.info.city}
                                              />
                         </div>
                         <div>
-                            State: <TextField
+                            <TextField
                                              hintText={this.state.info.state}
+                                             floatingLabelText="State:"
+                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                              onChange={this.handleChange}
                                              name="state"
                                              value={this.state.info.state}
                                              />
                         </div>
                         <div>
-                            Zip: <TextField
+                            <TextField
                                              hintText={this.state.info.zip}
+                                             floatingLabelText="Zip:"
+                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                              onChange={this.handleChange}
                                              name="zip"
                                              value={this.state.info.zip}
@@ -93,8 +106,11 @@ class UserEdit extends Component {
                         </div>
                         
                         <div>
-                            Country:<TextField
+                             <TextField
                                              hintText={this.state.info.country}
+                                             floatingLabelText="Country:"
+                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                              onChange={this.handleChange}
                                              name="country"
                                              value={this.state.info.country}

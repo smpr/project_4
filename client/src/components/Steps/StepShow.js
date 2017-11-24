@@ -3,6 +3,8 @@ import { BrowserRouter as Link } from 'react-router-dom'
 import axios from 'axios'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+
 class StepShow extends Component {
     state = {
         step: {}
@@ -31,8 +33,8 @@ class StepShow extends Component {
                             <h3>Step:</h3> {this.state.step.title}
                         </div>
                         <div>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${this.props.match.params.stepId}/edit`}><RaisedButton label="Edit" style={Style} /></Link>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`}><RaisedButton label="Back" style={Style} /></Link>
+                            <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${this.props.match.params.stepId}/edit`} label="Edit" style={Style} />
+                            <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`} label="Back" style={Style} />
                         </div>
                     </FormContainer>
                   

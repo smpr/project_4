@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {orange500, blue500, blueGrey100, cyan500} from 'material-ui/styles/colors';
 
 const BodyContainer = styled.div`
 display:flex;
@@ -84,6 +85,20 @@ const Style = {
     border: '.5px solid #37474F',
     backgroundColor: '#37474F'
   };
-export { Style, NavContainer, ListDiv, InnerForm, FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
+  const TextLabelStyle = {
+    errorStyle: {
+      color: orange500,
+    },
+    underlineStyle: {
+      borderColor: orange500,
+    },
+    floatingLabelStyle: {
+      color: blueGrey100,
+    },
+    floatingLabelFocusStyle: {
+      color: cyan500,
+    },
+  };
+export { Style, TextLabelStyle, NavContainer, ListDiv, InnerForm, FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
 
 }

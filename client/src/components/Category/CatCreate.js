@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
@@ -45,6 +45,9 @@ class CatCreate extends Component {
                         <div>
                         <TextField
                                 hintText="Category Name"
+                                floatingLabelText="Category Name"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                 onChange={this.handleChange}
                                 name="title"
                                 type="text"

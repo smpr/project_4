@@ -58,7 +58,7 @@ class UserHome extends Component {
                             Country: {this.state.info.country}<br />
                             Zip: {this.state.info.zip}<br />
                         
-                        <div><Link to='/Users/edit'><RaisedButton label="Edit" style={Style} /></Link></div>
+                        <div><RaisedButton href='/Users/edit' label="Edit" style={Style} /></div>
                         </div>
                     </FormContainer>
                 </Container>

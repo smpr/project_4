@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 class UserCreate extends Component {
     state = {
@@ -90,17 +91,49 @@ class UserCreate extends Component {
                                 <h2><b>Create User</b></h2>
                             </div>
                             <div>
-                                E-mail:
-                                    <input onChange={this.handleChange} type="text" name="email" value={this.state.info.email} />
+                              <TextField
+                                    hintText="Email"
+                                    floatingLabelText="Email"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="email"
+                                    type="text"
+                                    required
+
+                                    value={this.state.info.email}
+                                    /> 
+                                    
                             </div>
                             <div>
-                                Password:
-                                    <input onChange={this.handleChange} type="password" name="password" value={this.state.info.password} />
+                                <TextField
+                                    hintText="Password"
+                                    floatingLabelText="Password"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="password"
+                                    type="password"
+                                    required
+
+                                    value={this.state.info.password}
+                                    /> 
+                                   
                             </div>
                             <div>
-                                Confirm Password:
-                                    <input onChange={this.handleChange} type="password" name="password_confirmation"
-                                    value={this.state.info.password_confirmation} />
+                                <TextField
+                                    hintText="Confirm Password"
+                                    floatingLabelText="Confirm Password"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="password_confirmation"
+                                    type="password"
+                                    required
+
+                                    value={this.state.info.password_confirmation}
+                                    /> 
+                                  
                             </div>
                             <div>
                                 <RaisedButton onClick={this.signUp} label="Next" style={Style} />
@@ -113,10 +146,34 @@ class UserCreate extends Component {
                 <Container>
                     <FormContainer>
                         <div>
-                            Address: <input onChange={this.handleChange} name="address" value={this.state.info.address} />
+                        <TextField
+                                    hintText="Address"
+                                    floatingLabelText="Address"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="address"
+                                    type="text"
+                                    required
+
+                                    value={this.state.info.address}
+                                    /> 
+                            
                         </div>
                         <div>
-                            Zip:<input onChange={this.handleChange} name="zip" value={this.state.info.zip} />
+                        <TextField
+                                    hintText="Zip"
+                                    floatingLabelText="Zip"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="zip"
+                                    type="number"
+                                    required
+
+                                    value={this.state.info.zip}
+                                    /> 
+                            
                         </div>
                         <div>
                             <RaisedButton onClick={this.promptToThirdForm} label="Next" style={Style} />
@@ -129,14 +186,50 @@ class UserCreate extends Component {
                 <Container>
                     <FormContainer>
                         <div>
-                            City: <input onChange={this.handleChange} name="city" value={this.state.info.city} />
+                        <TextField
+                                    hintText="City"
+                                    floatingLabelText="City"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="city"
+                                    type="text"
+                                    required
+
+                                    value={this.state.info.city}
+                                    /> 
+                            
                         </div>
                         <div>
-                            State:<input onChange={this.handleChange} name="state" value={this.state.info.state} />
+                        <TextField
+                                    hintText="State"
+                                    floatingLabelText="State"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="state"
+                                    type="text"
+                                    required
+
+                                    value={this.state.info.state}
+                                    /> 
+                           
                         </div>
 
                         <div>
-                            Country:<input onChange={this.handleChange} name="country" value={this.state.info.country} />
+                        <TextField
+                                    hintText="Country"
+                                    floatingLabelText="Country"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="country"
+                                    type="text"
+                                    required
+
+                                    value={this.state.info.country}
+                                    /> 
+                            
                         </div>
                         <div>
                             <RaisedButton onClick={this.promptToFourthForm} label="Next" style={Style} />

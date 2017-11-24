@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Style, InnerForm} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style, InnerForm, TextLabelStyle} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 class WalkthroughEdit extends Component {
     state = {
@@ -60,22 +61,40 @@ class WalkthroughEdit extends Component {
                     <div>
                         <h2>Edit Walkthrough</h2>
                     </div>
-                    <InnerForm>
+                   
                     <div>
-                        Title: 
+                        
+                    <TextField
+                                hintText="Category Name"
+                                floatingLabelText="Walkthrough Title:"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="name"
+                                type="text"
+                                
+
+                                value={this.state.walkthrough.name}
+                                />
+                        
                     </div>
                     <div>
-                        <input onChange={this.handleChange} name="name" value={this.state.walkthrough.name} />
+                        <TextField
+                                hintText="Category Description"
+                                floatingLabelText="Description:"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="body"
+                                type="text"
+                                
+
+                                value={this.state.walkthrough.body}
+                                />
+                   
+                        
                     </div>
-                    </InnerForm>
-                    <InnerForm>
-                    <div>
-                        Description: 
-                    </div>
-                    <div>
-                        <input onChange={this.handleChange} name="body" value={this.state.walkthrough.body} />
-                    </div>
-                    </InnerForm>
+                    
                     <div>
                         <RaisedButton onClick={this.deleteWalk} label="Delete" style={Style} />
                         <RaisedButton onClick={this.editWalk} label="Edit" style={Style} />

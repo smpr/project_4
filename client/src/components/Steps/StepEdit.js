@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 class StepEdit extends Component {
     state = {
@@ -70,14 +71,34 @@ class StepEdit extends Component {
                 <br />
                 <h2><b>Edit Step</b></h2>
                 <br />
-                Title: <input onChange={this.handleChange} name="title" value={this.state.step.title} />
+                 <TextField
+                                hintText="Title"
+                                floatingLabelText="Step Name"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="title"
+                                type="text"
+                                
+
+                                value={this.state.step.title}
+                                />
 
                 <div>
-                    Description: <input onChange={this.handleChange} name="body" value={this.state.step.body} />
+                     <TextField
+                                hintText="Description"
+                                floatingLabelText="Step Description"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="body"
+                                type="text"
+                                
+
+                                value={this.state.step.body}
+                                />
                 </div>
-                <div>
-                    Links:<input onChange={this.handleChange} name="links" value={this.state.step.links} />
-                </div>
+
                 <RaisedButton onClick={this.deleteStep} label="Delete" style={Style} />
                 <RaisedButton onClick={this.editStep} label="Edit" style={Style} />
             </div>

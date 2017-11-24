@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link, Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
@@ -7,7 +7,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 class StepHome extends Component {
     state = {
         info: [],
-        steps: [],
+        steps: [{
+            title: '',
+            body: ''
+
+        }],
         meetups: [],
         category: {}
     }
@@ -17,11 +21,10 @@ class StepHome extends Component {
             const catId = this.props.match.params.categoryId
             const walkId = this.props.match.params.walkthroughId
             const category = await axios.get(`/api/categories/${catId}`)
-            this.setState({ category: category.data })
+            //this.setState({ category: category.data })
             const info = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}`)
-            this.setState({info: info.data})
             const steps = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}/steps`)
-            this.setState({steps: steps.data})
+            this.setState({info: info.data, category: category.data, steps: steps.data})
             
 
         } catch (error) {
@@ -42,20 +45,21 @@ class StepHome extends Component {
                         <div><b>Description:</b> {this.state.info.body}</div>
                         
                         <div>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}><RaisedButton label="Edit" style={Style} /></Link>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`}><RaisedButton label="Back" style={Style} /></Link>
+                            <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`}label="Edit" style={Style} />
+                            <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`} label="Back" style={Style} />
                         </div>
                     </FormContainer>
                    
                 </Container>
                 <Container>
                     <FormContainer>
-                        
+                        <div>
                         <ol>
                             <div>
                             <h2>Steps:</h2>
+                            </div>
                             <div>
-                                <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`}><RaisedButton label="New Step" style={Style} /></Link>
+                                <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/create`} label="New Step" style={Style} />
                             </div>
                             {this.state.steps.map((step, index) => {
                             return (
@@ -64,8 +68,9 @@ class StepHome extends Component {
 
                             )
                         })} 
-                        </div>
+                     
                         </ol>
+                        </div>
                     </FormContainer>
                 </Container>
 

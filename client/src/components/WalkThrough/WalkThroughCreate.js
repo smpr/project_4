@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
@@ -50,7 +50,10 @@ class WalkThroughCreate extends Component {
                         </div>
                         <div> 
                             <TextField
-                                hintText="Walkthough Name"
+                                hintText="Walkthrough Name"
+                                floatingLabelText="Walkthrough Name"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                 onChange={this.handleChange}
                                 name="name"
                                 type="text"
@@ -63,6 +66,9 @@ class WalkThroughCreate extends Component {
                         <div>
                         <TextField
                                 hintText="Walkthough Description"
+                                floatingLabelText="Walkthrough Description"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                 onChange={this.handleChange}
                                 name="body"
                                 type="text"

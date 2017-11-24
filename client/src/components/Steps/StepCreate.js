@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+
 class StepCreate extends Component {
     state = {
         step: {},
@@ -38,35 +40,35 @@ class StepCreate extends Component {
                     <FormContainer>
                         <div><h2>New Step</h2></div>
                         <div>
-                            <input
-                                placeholder='Title'
-                                onChange={this.handleChange}
-                                name="title"
-                                type="text"
-                                required
+                            <TextField
+                                    hintText="Step Name"
+                                    floatingLabelText="Step Name"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="title"
+                                    type="text"
+                                    required
 
-                                value={this.state.step.title} />
+                                    value={this.state.step.title}
+                                    />                    
                         </div>
                         <div>
-                            <input
-                                placeholder='Description'
-                                onChange={this.handleChange}
-                                name="body"
-                                type="text"
+                        <TextField
+                                    hintText="Step Description"
+                                    floatingLabelText="Step Description"
+                                    floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                    floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                    onChange={this.handleChange}
+                                    name="body"
+                                    type="text"
+                                    required
 
+                                    value={this.state.step.body}
+                                    />
 
-                                value={this.state.step.body} />
                         </div>
-                        <div>
-                            <input
-                                placeholder='Helpful Links'
-                                onChange={this.handleChange}
-                                name="links"
-                                type="text"
 
-
-                                value={this.state.step.links} />
-                        </div>
                         <div>
                         <RaisedButton  onClick={this.handleSubmit} label="Submit" style={Style} />
                         </div>
