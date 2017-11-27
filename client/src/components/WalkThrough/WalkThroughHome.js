@@ -68,7 +68,7 @@ class WalkThroughHome extends Component {
                         <div><h2>Meetups:</h2></div>
                         <div>{this.state.meetups.map((meetup, index) => {
                             return (
-                                <LinkDiv><div><a href={meetup.link}>{meetup.name}</a></div><div><button value={index} onClick={() => this.handleSubmit(index)}>save</button></div></LinkDiv>
+                                <LinkDiv><div><a href={meetup.link}>{meetup.name}</a></div><div><button value={index} onClick={() => this.handleSubmit(index)}>SAVE</button></div></LinkDiv>
                             )
                         })}</div></div>
 
