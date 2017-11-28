@@ -30,10 +30,7 @@ demowalk = Walkthrough.create(name:"Template Server", links:"none",body:"This is
 demowalk2 = Walkthrough.create(name:"Server Template", links:"none",body:"Setting up default React on Rails template", category_id: democat2.id)
 
 bobstep1 = Step.create(title:"Comand Line", body:"create-react-app (app name)", links:"1", walkthrough_id: bobwalk.id)
-demostep1 = Step.create(title:"13", body:"12323", links:"", walkthrough_id: demowalk.id)
-demostep2 = Step.create(title:"123", body:"123231", links:"", walkthrough_id: demowalk.id)
-demostep3 = Step.create(title:"123", body:"12323", links:"", walkthrough_id: demowalk.id)
-demostep4 = Step.create(title:"12424", body:"12332", links:"", walkthrough_id: demowalk.id)
+demostep1 = Step.create(title:"Comand Link", body:"create-react-app (app name)", links:"", walkthrough_id: demowalk.id)
 bobstep11 = Step.create(title:"12124214", body:"12323", links:"", walkthrough_id: bobwalk2.id)
 bobstep21 = Step.create(title:"12442124", body:"123213", links:"", walkthrough_id: bobwalk2.id)
 bobstep31 = Step.create(title:"12442", body:"123213", links:"", walkthrough_id: bobwalk2.id)
