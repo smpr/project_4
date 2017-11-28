@@ -83,6 +83,9 @@ class UserCreate extends Component {
         }
 
         render() {
+            if (!localStorage['access-token']) {
+                return <Redirect to='/' />
+            }
             const page1 =
                 <BodyContainer>
                     <Container>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import {Container, FormContainer, BodyContainer, LinkDiv, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
@@ -41,6 +41,9 @@ class WalkThroughHome extends Component {
     }
     
     render() {
+        if (!localStorage['access-token']) {
+            return <Redirect to='/' />
+        }
         return (
             <BodyContainer>
                 <Container>

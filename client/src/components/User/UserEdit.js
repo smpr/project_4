@@ -53,6 +53,8 @@ class UserEdit extends Component {
     render() {
         if (this.state.redirectToInfoHome) {
             return <Redirect to={`/Users/Home`} />
+        }else if (!localStorage['access-token']) {
+            return <Redirect to='/' />
         }
         return (
             <BodyContainer>

@@ -52,7 +52,9 @@ class WalkthroughEdit extends Component {
     render() {
         if (this.state.redirectToWalkthrough) {
             return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`} />
-          }
+          }else if (!localStorage['access-token']) {
+            return <Redirect to='/' />
+        }
         return (
             <BodyContainer>
                 <Container>

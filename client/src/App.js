@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from "./util/SessionHeaderUtil"
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -30,8 +30,10 @@ import StepsEdit from './components/Steps/StepEdit.js'
 
 class App extends Component {
   state = {
+    redirectToLogin: false,
     signedIn: false,
-    categories: ""
+    categories: "",
+ 
   }
   async componentWillMount() {
     try {
@@ -45,7 +47,9 @@ class App extends Component {
 
       this.setState({
         categories,
-        signedIn,
+        signedIn
+        
+        
       })
     } catch (error) {
       console.log(error)
@@ -99,10 +103,10 @@ class App extends Component {
       event.preventDefault()
 
       await axios.delete('/auth/sign_out')
-
+      
       clearAuthTokens();
 
-      this.setState({ signedIn: false, redirectToLogin: true })
+      this.setState({ signedIn: false })
     } catch (error) {
       console.log(error)
     }
@@ -118,6 +122,10 @@ class App extends Component {
     }
   }
   render() {
+    if (this.state.redirectToLogin) {
+      return <Redirect to={`/`} />
+  }
+    // {this.state.signedIn ? null : <Redirect to={"/"}/> }
     const SignUpLogInComponent = () => (
       <HomePage
         signUp={this.signUp}
@@ -134,13 +142,15 @@ class App extends Component {
       <MuiThemeProvider>
       <Router>
         <div>
-
+        
           <Nav
             signOut={this.signOut}
           />
 
           <Switch>
+ 
             <Route exact path="/" render={SignUpLogInComponent} />
+            
             <Route exact path="/signup" render={SignUpLogInComponent} />
             <Route exact path="/Users/create" render={CreateUserSignup} />
             <Route exact path="/Users/Home" component={UserHome} />

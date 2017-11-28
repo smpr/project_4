@@ -44,7 +44,9 @@ async componentWillMount() {
     render() {
         if (this.state.redirectToUserHome) {
             return <Redirect to={`/Users/Home`} />
-          }
+          }else if (!localStorage['access-token']) {
+            return <Redirect to='/' />
+        }
         return (
             <BodyContainer>
                 <Container>

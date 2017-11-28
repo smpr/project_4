@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link } from 'react-router-dom'
+import { BrowserRouter as Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
@@ -24,6 +24,9 @@ class StepShow extends Component {
 
     }
     render() {
+        if (!localStorage['access-token']) {
+            return <Redirect to='/' />
+        }
         return (
             <BodyContainer>
                 <Container>

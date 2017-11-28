@@ -38,6 +38,8 @@ class WalkThroughCreate extends Component {
     render() {
         if (this.state.redirectToHome) {
             return <Redirect to={`/categories/${this.props.match.params.categoryId}/walkthroughs`} />
+        }else if (!localStorage['access-token']) {
+            return <Redirect to='/' />
         }
         return (
             <BodyContainer>

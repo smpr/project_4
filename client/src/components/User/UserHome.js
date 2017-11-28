@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import sample from './samplemap.png'
 import {Container, FormContainer, BodyContainer, Style, ImgContainer} from "../StyledComponents/DefaultStyle"
@@ -45,6 +45,9 @@ class UserHome extends Component {
 //save the update to the object
 
     render() {
+        if (!localStorage['access-token']) {
+            return <Redirect to='/' />
+        }
 
         return (
             <BodyContainer>

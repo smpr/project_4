@@ -36,6 +36,8 @@ class StepHome extends Component {
     render() {
         if (this.props.signedIn) {
             return <Redirect to={`/signup`} />
+        }else if (!localStorage['access-token']) {
+            return <Redirect to='/' />
         }
         return (
             <BodyContainer>

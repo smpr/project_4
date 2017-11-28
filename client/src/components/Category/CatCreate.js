@@ -32,6 +32,8 @@ class CatCreate extends Component {
 
         if (this.state.redirectToHome) {
             return <Redirect to="/categories" />
+        }else if (!localStorage['access-token']) {
+            return <Redirect to='/' />
         }
         return (
             <BodyContainer>

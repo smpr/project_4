@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import {Container, FormContainer, BodyContainer, ListDiv, Style} from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -23,6 +23,9 @@ class CatHome extends Component {
 
     }
     render() {
+        if (!localStorage['access-token']) {
+            return <Redirect to='/' />
+        }
         return (
             <BodyContainer>
                 <Container>

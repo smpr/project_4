@@ -31,6 +31,8 @@ class StepCreate extends Component {
     render() {
         if (this.state.redirectToWalkthroughs) {
             return <Redirect to={`/categories/${this.props.match.params.categoryId}/walkthroughs/${this.props.match.params.walkthroughId}/steps`} />
+        }else if (!localStorage['access-token']) {
+            return <Redirect to='/' />
         }
         return (
             <BodyContainer>
