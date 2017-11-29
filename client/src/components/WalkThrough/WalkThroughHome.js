@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, LinkDiv, Style} from "../StyledComponents/DefaultStyle"
+import { Container, FormContainer, BodyContainer, LinkDiv, Style } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 class WalkThroughHome extends Component {
     state = {
         walkthroughs: [],
         meetups: [],
         meetup: {
-            name:""
+            name: ""
         }
     }
     async componentWillMount() {
@@ -30,16 +30,16 @@ class WalkThroughHome extends Component {
     }
 
     async handleSubmit(index) {
-        try{
-         const id = index
-         const meetup = this.state.meetups[id]
-        this.setState({ meetup: meetup})
-        await axios.post(`/api/meetups`, { meetup: this.state.meetup })
-        } catch (error){
+        try {
+            const id = index
+            const meetup = this.state.meetups[id]
+            this.setState({ meetup: meetup })
+            await axios.post(`/api/meetups`, { meetup: this.state.meetup })
+        } catch (error) {
             console.log(error)
         }
     }
-    
+
     render() {
         if (!localStorage['access-token']) {
             return <Redirect to='/' />
@@ -47,35 +47,35 @@ class WalkThroughHome extends Component {
         return (
             <BodyContainer>
                 <Container>
-                <FormContainer>
-                    <div>
-                    <div><h2>Walkthroughs:</h2>
-                    <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}><RaisedButton label="New Walkthrough" style={Style} /></Link>
-                    </div>
-                    <br/>
-                    <div>
-                        {this.state.walkthroughs.map((walkthrough, index) => {
-                            return (
-                                <div><Link key={walkthrough._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${walkthrough.id}/steps`}><b>{walkthrough.name}</b>
-                                </Link></div>
+                    <FormContainer>
+                        <div>
+                            <div><h2>Walkthroughs:</h2>
+                                <Link to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/Create`}><RaisedButton label="New Walkthrough" style={Style} /></Link>
+                            </div>
+                            <br />
+                            <div>
+                                {this.state.walkthroughs.map((walkthrough, index) => {
+                                    return (
+                                        <div><Link key={walkthrough._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${walkthrough.id}/steps`}><b>{walkthrough.name}</b>
+                                        </Link></div>
 
-                            )
-                        })}
-                    </div>
-                    </div>
-                </FormContainer>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </FormContainer>
                 </Container>
                 <Container>
-                <FormContainer>
-                    <div>
-                        <div><h2>Meetups:</h2></div>
-                        <div>{this.state.meetups.map((meetup, index) => {
-                            return (
-                                <LinkDiv><div><a href={meetup.link}>{meetup.name}</a></div><div><button value={index} onClick={() => this.handleSubmit(index)}>SAVE</button></div></LinkDiv>
-                            )
-                        })}</div></div>
+                    <FormContainer>
+                        <div>
+                            <div><h2>Meetups:</h2></div>
+                            <div>{this.state.meetups.map((meetup, index) => {
+                                return (
+                                    <LinkDiv><div><a href={meetup.link}>{meetup.name}</a></div><div><button value={index} onClick={() => this.handleSubmit(index)}>SAVE</button></div></LinkDiv>
+                                )
+                            })}</div></div>
 
-                </FormContainer>
+                    </FormContainer>
                 </Container>
             </BodyContainer>
         );

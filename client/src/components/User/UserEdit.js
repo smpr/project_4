@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
+import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
@@ -53,7 +53,7 @@ class UserEdit extends Component {
     render() {
         if (this.state.redirectToInfoHome) {
             return <Redirect to={`/Users/Home`} />
-        }else if (!localStorage['access-token']) {
+        } else if (!localStorage['access-token']) {
             return <Redirect to='/' />
         }
         return (
@@ -61,64 +61,64 @@ class UserEdit extends Component {
                 <Container>
                     <FormContainer>
                         <h2>Edit User</h2>
-                        
+
                         <div>
-                             <TextField
-                                             hintText={this.state.info.address}
-                                             floatingLabelText="Address:"
-                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
-                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
-                                             onChange={this.handleChange}
-                                             name="address"
-                                             value={this.state.info.address}
-                                             />
+                            <TextField
+                                hintText={this.state.info.address}
+                                floatingLabelText="Address:"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="address"
+                                value={this.state.info.address}
+                            />
                         </div>
                         <div>
                             <TextField
-                                             hintText={this.state.info.city}
-                                             floatingLabelText="City:"
-                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
-                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
-                                             onChange={this.handleChange}
-                                             name="city"
-                                             value={this.state.info.city}
-                                             />
+                                hintText={this.state.info.city}
+                                floatingLabelText="City:"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="city"
+                                value={this.state.info.city}
+                            />
                         </div>
                         <div>
                             <TextField
-                                             hintText={this.state.info.state}
-                                             floatingLabelText="State:"
-                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
-                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
-                                             onChange={this.handleChange}
-                                             name="state"
-                                             value={this.state.info.state}
-                                             />
+                                hintText={this.state.info.state}
+                                floatingLabelText="State:"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="state"
+                                value={this.state.info.state}
+                            />
                         </div>
                         <div>
                             <TextField
-                                             hintText={this.state.info.zip}
-                                             floatingLabelText="Zip:"
-                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
-                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
-                                             onChange={this.handleChange}
-                                             name="zip"
-                                             value={this.state.info.zip}
-                                             />
+                                hintText={this.state.info.zip}
+                                floatingLabelText="Zip:"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="zip"
+                                value={this.state.info.zip}
+                            />
                         </div>
-                        
+
                         <div>
-                             <TextField
-                                             hintText={this.state.info.country}
-                                             floatingLabelText="Country:"
-                                             floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
-                                             floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
-                                             onChange={this.handleChange}
-                                             name="country"
-                                             value={this.state.info.country}
-                                             />
+                            <TextField
+                                hintText={this.state.info.country}
+                                floatingLabelText="Country:"
+                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                onChange={this.handleChange}
+                                name="country"
+                                value={this.state.info.country}
+                            />
                         </div>
-                        
+
                         <div>
                             <RaisedButton onClick={this.editInfo} label="Edit" style={Style} />
                         </div>

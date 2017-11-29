@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
+import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
@@ -32,39 +32,39 @@ class CatCreate extends Component {
 
         if (this.state.redirectToHome) {
             return <Redirect to="/categories" />
-        }else if (!localStorage['access-token']) {
+        } else if (!localStorage['access-token']) {
             return <Redirect to='/' />
         }
         return (
             <BodyContainer>
                 <Container>
-                <form>
-                    <FormContainer>
-                        <div>
-                        <div>
-                            <h2>Create a Category:</h2>
-                        </div>
-                        <div>
-                        <TextField
-                                hintText="Category Name"
-                                floatingLabelText="Category Name"
-                                floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
-                                floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
-                                onChange={this.handleChange}
-                                name="title"
-                                type="text"
-                                required
+                    <form>
+                        <FormContainer>
+                            <div>
+                                <div>
+                                    <h2>Create a Category:</h2>
+                                </div>
+                                <div>
+                                    <TextField
+                                        hintText="Category Name"
+                                        floatingLabelText="Category Name"
+                                        floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
+                                        floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
+                                        onChange={this.handleChange}
+                                        name="title"
+                                        type="text"
+                                        required
 
-                                value={this.state.category.title}
-                                />
-        
-                        </div>
-                        <div>
-                        <RaisedButton onClick={this.handleSubmit} label="Create Category" style={Style} />
-                        </div>
-                        </div>
-                    </FormContainer>
-                </form>
+                                        value={this.state.category.title}
+                                    />
+
+                                </div>
+                                <div>
+                                    <RaisedButton onClick={this.handleSubmit} label="Create Category" style={Style} />
+                                </div>
+                            </div>
+                        </FormContainer>
+                    </form>
                 </Container>
             </BodyContainer>
         );

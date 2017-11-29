@@ -33,7 +33,7 @@ class App extends Component {
     redirectToLogin: false,
     signedIn: false,
     categories: "",
- 
+
   }
   async componentWillMount() {
     try {
@@ -48,8 +48,8 @@ class App extends Component {
       this.setState({
         categories,
         signedIn
-        
-        
+
+
       })
     } catch (error) {
       console.log(error)
@@ -58,7 +58,7 @@ class App extends Component {
   //this is devise sign up that will be passed down via props
   signUp = async (email, password, password_confirmation) => {
     try {
-        const payload = {
+      const payload = {
         email: email,
         password: password,
         password_confirmation: password_confirmation
@@ -103,7 +103,7 @@ class App extends Component {
       event.preventDefault()
 
       await axios.delete('/auth/sign_out')
-      
+
       clearAuthTokens();
 
       this.setState({ signedIn: false })
@@ -124,8 +124,7 @@ class App extends Component {
   render() {
     if (this.state.redirectToLogin) {
       return <Redirect to={`/`} />
-  }
-    // {this.state.signedIn ? null : <Redirect to={"/"}/> }
+    }
     const SignUpLogInComponent = () => (
       <HomePage
         signUp={this.signUp}
@@ -140,39 +139,39 @@ class App extends Component {
     )
     return (
       <MuiThemeProvider>
-      <Router>
-        <div>
-        
-          <Nav
-            signOut={this.signOut}
-          />
+        <Router>
+          <div>
 
-          <Switch>
- 
-            <Route exact path="/" render={SignUpLogInComponent} />
-            
-            <Route exact path="/signup" render={SignUpLogInComponent} />
-            <Route exact path="/Users/create" render={CreateUserSignup} />
-            <Route exact path="/Users/Home" component={UserHome} />
-            <Route exact path="/Users/Edit" component={UserEdit} />
+            <Nav
+              signOut={this.signOut}
+            />
 
-            
-            <Route exact path="/Users/Meetups/:meetId/MeetupDetails" component={MeetDetails} />
+            <Switch>
+
+              <Route exact path="/" render={SignUpLogInComponent} />
+
+              <Route exact path="/signup" render={SignUpLogInComponent} />
+              <Route exact path="/Users/create" render={CreateUserSignup} />
+              <Route exact path="/Users/Home" component={UserHome} />
+              <Route exact path="/Users/Edit" component={UserEdit} />
 
 
-            <Route exact path="/Categories/" component={CatHome} />
-            <Route exact path="/Categories/Create" component={CatCreate} />
-            <Route exact path="/Categories/:categoryId/WalkThroughs" component={WalkHome} />
-            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Edit" component={WalkEdit} />
-            <Route exact path="/Categories/:categoryId/WalkThroughs/Create" component={WalkCreate} />
+              <Route exact path="/Users/Meetups/:meetId/MeetupDetails" component={MeetDetails} />
 
-            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps" component={StepsHome} />
-            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/Create" component={StepsCreate} />
-            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/Edit" component={StepsEdit} />
-            <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/show" component={StepsShow} />
-          </Switch>
-        </div>
-      </Router>
+
+              <Route exact path="/Categories/" component={CatHome} />
+              <Route exact path="/Categories/Create" component={CatCreate} />
+              <Route exact path="/Categories/:categoryId/WalkThroughs" component={WalkHome} />
+              <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Edit" component={WalkEdit} />
+              <Route exact path="/Categories/:categoryId/WalkThroughs/Create" component={WalkCreate} />
+
+              <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps" component={StepsHome} />
+              <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/Create" component={StepsCreate} />
+              <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/Edit" component={StepsEdit} />
+              <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/show" component={StepsShow} />
+            </Switch>
+          </div>
+        </Router>
       </MuiThemeProvider>
     );
   }

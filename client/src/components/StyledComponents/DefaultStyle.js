@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {orange500, blue500, blueGrey100, cyan500} from 'material-ui/styles/colors';
+import { orange500, blue500, blueGrey100, cyan500 } from 'material-ui/styles/colors';
 
 const BodyContainer = styled.div`
 display:flex;
@@ -66,7 +66,7 @@ background-color: #191919;
 height: 5vh;
 color: white;
 box-shadow: 10px 10px 5px #888888;
-` 
+`
 const InnerForm = styled.div`
 display: flex;
 justify-content: space-around;
@@ -79,26 +79,27 @@ align-content: center;
 flex-direction: column;
 `
 const Style = {
-    // width: '10%',
-    height: '95%',
-    margin: '10px',
-    border: '.5px solid #37474F',
-    backgroundColor: '#37474F'
-  };
-  const TextLabelStyle = {
-    errorStyle: {
-      color: orange500,
-    },
-    underlineStyle: {
-      borderColor: orange500,
-    },
-    floatingLabelStyle: {
-      color: blueGrey100,
-    },
-    floatingLabelFocusStyle: {
-      color: cyan500,
-    },
-  };
-export { Style, TextLabelStyle, NavContainer, ListDiv, InnerForm, FormContainer , LinkDiv, Container, BodyContainer, Button, ImgContainer
+  // width: '10%',
+  height: '95%',
+  margin: '10px',
+  border: '.5px solid #37474F',
+  backgroundColor: '#37474F'
+};
+const TextLabelStyle = {
+  errorStyle: {
+    color: orange500,
+  },
+  underlineStyle: {
+    borderColor: orange500,
+  },
+  floatingLabelStyle: {
+    color: blueGrey100,
+  },
+  floatingLabelFocusStyle: {
+    color: cyan500,
+  },
+};
+export {
+  Style, TextLabelStyle, NavContainer, ListDiv, InnerForm, FormContainer, LinkDiv, Container, BodyContainer, Button, ImgContainer
 
 }

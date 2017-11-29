@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import { Container, FormContainer, BodyContainer, Style } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
@@ -30,7 +30,7 @@ class StepShow extends Component {
         return (
             <BodyContainer>
                 <Container>
-                
+
                     <FormContainer>
                         <div>
                             <h3>Step:</h3> {this.state.step.title}
@@ -40,7 +40,7 @@ class StepShow extends Component {
                             <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`} label="Back" style={Style} />
                         </div>
                     </FormContainer>
-                  
+
                 </Container>
                 <Container>
                     <FormContainer>
@@ -48,7 +48,7 @@ class StepShow extends Component {
                             <h3>Description:</h3>{this.state.step.body}
                         </div>
                     </FormContainer>
-                    
+
                 </Container>
             </BodyContainer>
         );

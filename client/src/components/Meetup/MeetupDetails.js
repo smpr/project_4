@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Container, FormContainer, BodyContainer, Style} from "../StyledComponents/DefaultStyle"
+import sample from '../User/samplemap.png'
+import { Container, FormContainer, BodyContainer, Style } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
 
 class componentName extends Component {
     state = {
-        meetup:{},
+        meetup: {},
         redirectToUserHome: false,
-        mapsInfo:[{
+        mapsInfo: [{
             name: [],
             lon: [],
             lat: []
-    }]
+        }]
     }
-// grabs all meetup id that the user clicked save that was then saved to the meetup model
-// also sets a new state so that the map will be able to make drop pins on the map 
-async componentWillMount() {
+    // grabs all meetup id that the user clicked save that was then saved to the meetup model
+    // also sets a new state so that the map will be able to make drop pins on the map 
+    async componentWillMount() {
         try {
             const meetId = this.props.match.params.meetId
             const meetup = await axios.get(`/api/meetups/${meetId}`)
@@ -25,7 +26,7 @@ async componentWillMount() {
             this.state.mapsInfo.name = this.state.meetup.name
             this.state.mapsInfo.lon = this.state.meetup.lon
             this.state.mapsInfo.lat = this.state.meetup.lat
-           
+
             console.log(this.state.mapsInfo)
         } catch (error) {
             console.log(error)
@@ -35,16 +36,16 @@ async componentWillMount() {
     //allows user to delete this meetup
     deleteMeetup = async () => {
         const meetId = this.props.match.params.meetId
-    await axios.delete(`/api/meetups/${meetId}`)
-    //redirect back to the user page after the id has been deleted
-    this.setState({ redirectToUserHome: true })
+        await axios.delete(`/api/meetups/${meetId}`)
+        //redirect back to the user page after the id has been deleted
+        this.setState({ redirectToUserHome: true })
 
     }
 
     render() {
         if (this.state.redirectToUserHome) {
             return <Redirect to={`/Users/Home`} />
-          }else if (!localStorage['access-token']) {
+        } else if (!localStorage['access-token']) {
             return <Redirect to='/' />
         }
         return (
@@ -52,7 +53,7 @@ async componentWillMount() {
                 <Container>
                     <FormContainer>
                         <div>
-                           
+
                             <div><h2>Group:</h2> {this.state.meetup.name}</div>
                             <div><h3>City: </h3> {this.state.meetup.city}</div>
                             <div><h3>Description: </h3> {this.state.meetup.description}</div>
@@ -65,16 +66,17 @@ async componentWillMount() {
                     </FormContainer>
                 </Container>
                 <Container>
-                        <FormContainer>
-                        <iframe src="//www.google.com/maps/embed/v1/place?q=Empire%20State%20Building
+                    <FormContainer>
+                        <img src={sample} alt="sample" />
+                        {/* <iframe src="//www.google.com/maps/embed/v1/place?q=Empire%20State%20Building
                             &zoom=13
                             &attribution_source=Google+Maps+Embed+API
                             &attribution_web_url=https://developers.google.com/maps/documentation/embed/
                             &key=AIzaSyBs7QCycmCzKwvri5ZotdhCpGihXosxp2Q" allowfullscreen>
-                        </iframe>
-                        </FormContainer>
+                        </iframe> */}
+                    </FormContainer>
                 </Container>
-            </BodyContainer>
+            </BodyContainer >
         );
     }
 }

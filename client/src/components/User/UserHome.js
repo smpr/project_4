@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import sample from './samplemap.png'
-import {Container, FormContainer, BodyContainer, Style, ImgContainer} from "../StyledComponents/DefaultStyle"
+import { Container, FormContainer, BodyContainer, Style, ImgContainer } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 
 
@@ -27,22 +27,22 @@ class UserHome extends Component {
         }
 
     }
-       //run a function that will sort by date then delete the ones that have passed already based on todays time date. only delete the day after
-//grab the date of the event + 1 day
+    //run a function that will sort by date then delete the ones that have passed already based on todays time date. only delete the day after
+    //grab the date of the event + 1 day
 
-//grab todays date
+    //grab todays date
 
-//Check to see if todays date matches event day +1
+    //Check to see if todays date matches event day +1
 
-//if it is past day 
+    //if it is past day 
 
-//delete the meetup
+    //delete the meetup
 
-//if its not past yet
+    //if its not past yet
 
-//display it in a new state
+    //display it in a new state
 
-//save the update to the object
+    //save the update to the object
 
     render() {
         if (!localStorage['access-token']) {
@@ -60,8 +60,8 @@ class UserHome extends Component {
                             State: {this.state.info.state}<br />
                             Country: {this.state.info.country}<br />
                             Zip: {this.state.info.zip}<br />
-                        
-                        <div><RaisedButton href='/Users/edit' label="Edit" style={Style} /></div>
+
+                            <div><RaisedButton href='/Users/edit' label="Edit" style={Style} /></div>
                         </div>
                     </FormContainer>
                 </Container>
@@ -71,18 +71,18 @@ class UserHome extends Component {
                             <div>
                                 <h2>Meetups:</h2>
                             </div>
-                                {this.state.meetups.map((meetup, index) => {
-                                    return (
-                                        <div><Link key={meetup._id} to={`/Users/Meetups/${meetup.id}/MeetupDetails`}><b>{meetup.name}</b>
-                                        </Link></div>
+                            {this.state.meetups.map((meetup, index) => {
+                                return (
+                                    <div><Link key={meetup._id} to={`/Users/Meetups/${meetup.id}/MeetupDetails`}><b>{meetup.name}</b>
+                                    </Link></div>
 
-                                    )
-                                })}
+                                )
+                            })}
                         </div>
-                            <ImgContainer>
-                            <img src={sample} alt="sample"/>
-                                </ImgContainer>
-                        </FormContainer>
+                        <ImgContainer>
+                            <img src={sample} alt="sample" />
+                        </ImgContainer>
+                    </FormContainer>
                 </Container>
             </BodyContainer>
         );

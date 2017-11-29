@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
-import {Container, FormContainer, BodyContainer, Style, TextLabelStyle} from "../StyledComponents/DefaultStyle"
+import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
@@ -15,7 +15,7 @@ class SignUpLogIn extends Component {
         redirectToCategoryPage: false
     }
 
-//devise function that allows the user thats already been create to sign in
+    //devise function that allows the user thats already been create to sign in
     signIn = (event) => {
         event.preventDefault()
         this.props.signIn(
@@ -24,7 +24,7 @@ class SignUpLogIn extends Component {
         )
         this.setState({ redirectToCategoryPage: true })
     }
-//allows the change field to alter state
+    //allows the change field to alter state
     handleChange = (event) => {
         const newState = { ...this.state }
         newState[event.target.name] = event.target.value
@@ -40,14 +40,14 @@ class SignUpLogIn extends Component {
             <BodyContainer>
                 <Container>
                     <FormContainer>
-  
-                    
+
+
                         <form>
                             <div>
                                 <h2>Log In</h2>
                             </div>
                             <div>
-                            <TextField
+                                <TextField
                                     hintText="Email"
                                     floatingLabelText="Email"
                                     floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
@@ -58,12 +58,12 @@ class SignUpLogIn extends Component {
                                     required
 
                                     value={this.state.email}
-                                    /> 
+                                />
                                 {/* <label htmlFor="email">E-mail: </label>
                                 <input onChange={this.handleChange} type="text" name="email" value={this.state.email} /> */}
                             </div>
                             <div>
-                            <TextField
+                                <TextField
                                     hintText="Password"
                                     floatingLabelText="Password"
                                     floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
@@ -74,7 +74,7 @@ class SignUpLogIn extends Component {
                                     required
 
                                     value={this.state.password}
-                                    /> 
+                                />
                                 {/* <label htmlFor="password">Password: </label>
                                 <input onChange={this.handleChange} type="password" name="password" value={this.state.password} /> */}
                             </div>
@@ -84,7 +84,7 @@ class SignUpLogIn extends Component {
                             </div>
 
                         </form>
-                   </FormContainer>
+                    </FormContainer>
                 </Container>
             </BodyContainer>
         )
