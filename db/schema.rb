@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113214649) do
+ActiveRecord::Schema.define(version: 20171204231753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 20171113214649) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_meetups_on_user_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "name"
+    t.string "body"
+    t.string "link"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_notes_on_category_id"
   end
 
   create_table "steps", force: :cascade do |t|
@@ -102,6 +112,7 @@ ActiveRecord::Schema.define(version: 20171113214649) do
   add_foreign_key "categories", "users"
   add_foreign_key "infos", "users"
   add_foreign_key "meetups", "users"
+  add_foreign_key "notes", "categories"
   add_foreign_key "steps", "walkthroughs"
   add_foreign_key "walkthroughs", "categories"
 end

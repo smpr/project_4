@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :infos
     resources :meetups
     resources :categories do
+      resources :notes
       resources :walkthroughs do
         resources :steps
       end

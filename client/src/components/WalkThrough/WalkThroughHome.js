@@ -17,12 +17,13 @@ class WalkThroughHome extends Component {
             const catId = this.props.match.params.categoryId
             const category = await axios.get(`/api/categories/${catId}`)
             this.setState({ category: category.data })
-            const res = await axios.get(`/api/categories/${catId}/walkthroughs`)
+            const walks = await axios.get(`/api/categories/${catId}/walkthroughs`)
+            const notes = await axios.get(`/api/categories/${catId}/notes`)
             const searcher = this.state.category.title
             const meetups = await axios.get(`/api/meetupapi/${searcher}`)
 
             console.log(meetups.data)
-            this.setState({ meetups: meetups.data, walkthroughs: res.data })
+            this.setState({ meetups: meetups.data, walkthroughs: walks.data, notes: notes.data })
 
         } catch (error) {
             console.log(error)
@@ -71,6 +72,7 @@ class WalkThroughHome extends Component {
                                 <h2>Notes:</h2>
                             </div>
                             <div>
+                            <Link to={`/Categories/${this.props.match.params.categoryId}/Notes/Create`}><RaisedButton label="Create Note" style={Style} /></Link>
                                 {this.state.notes.map((note, index) =>{
                                 return (
                                     <div>

@@ -23,6 +23,9 @@ import WalkHome from './components/WalkThrough/WalkThroughHome'
 import WalkCreate from './components/WalkThrough/WalkThroughCreate'
 import WalkEdit from './components/WalkThrough/WalkThroughEdit'
 
+import NoteEdit from './components/Note/NoteEdit'
+import NoteCreate from './components/Note/NoteCreate'
+
 import StepsHome from './components/Steps/StepHome.js'
 import StepsCreate from './components/Steps/StepCreate.js'
 import StepsShow from './components/Steps/StepShow.js'
@@ -164,6 +167,9 @@ class App extends Component {
               <Route exact path="/Categories/:categoryId/WalkThroughs" component={WalkHome} />
               <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Edit" component={WalkEdit} />
               <Route exact path="/Categories/:categoryId/WalkThroughs/Create" component={WalkCreate} />
+
+              <Route exact path="/Categories/:categoryId/Notes/Create" component={NoteCreate} />
+              <Route exact path="/Categories/:categoryId/Notes/:noteId/Edit" component={NoteEdit} />
 
               <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps" component={StepsHome} />
               <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/Create" component={StepsCreate} />
