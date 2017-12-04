@@ -6,6 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 class WalkThroughHome extends Component {
     state = {
         walkthroughs: [],
+        notes: [],
         meetups: [],
         meetup: {
             name: ""
@@ -60,6 +61,23 @@ class WalkThroughHome extends Component {
                                         </Link></div>
 
                                     )
+                                })}
+                            </div>
+                        </div>
+                    </FormContainer>
+                    <FormContainer>
+                        <div>
+                            <div>
+                                <h2>Notes:</h2>
+                            </div>
+                            <div>
+                                {this.state.notes.map((note, index) =>{
+                                return (
+                                    <div>
+                                        <Link key={note._id} to={`/Notes/${this.props.match.param.categoryId}/Walkthroughs/${note.id}/notes`}><b>{note.name}</b>
+                                        </Link>
+                                    </div>
+                                        )
                                 })}
                             </div>
                         </div>
