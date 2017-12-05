@@ -76,7 +76,7 @@ class WalkThroughHome extends Component {
                                 {this.state.notes.map((note, index) =>{
                                 return (
                                     <div>
-                                        <Link key={note._id} to={`/Notes/${this.props.match.param.categoryId}/Walkthroughs/${note.id}/notes`}><b>{note.name}</b>
+                                        <Link key={note._id} to={`/Categories/${this.props.match.params.categoryId}/Notes/${note.id}/Show`}><b>{note.name}</b>
                                         </Link>
                                     </div>
                                         )

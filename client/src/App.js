@@ -25,7 +25,7 @@ import WalkEdit from './components/WalkThrough/WalkThroughEdit'
 
 import NoteEdit from './components/Note/NoteEdit'
 import NoteCreate from './components/Note/NoteCreate'
-
+import NoteShow from './components/Note/NoteShow'
 import StepsHome from './components/Steps/StepHome.js'
 import StepsCreate from './components/Steps/StepCreate.js'
 import StepsShow from './components/Steps/StepShow.js'
@@ -170,7 +170,8 @@ class App extends Component {
 
               <Route exact path="/Categories/:categoryId/Notes/Create" component={NoteCreate} />
               <Route exact path="/Categories/:categoryId/Notes/:noteId/Edit" component={NoteEdit} />
-
+              <Route exact path ="/Categories/:categoryId/Notes/:noteId/Show" component={NoteShow} />
+              
               <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps" component={StepsHome} />
               <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/Create" component={StepsCreate} />
               <Route exact path="/Categories/:categoryId/WalkThroughs/:walkthroughId/Steps/:stepId/Edit" component={StepsEdit} />
