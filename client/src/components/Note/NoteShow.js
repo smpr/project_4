@@ -23,18 +23,23 @@ class NoteShow extends Component {
             <BodyContainer>
                 <Container>
                     <FormContainer>
-                    <div>
-                    {this.state.note.name}
-                    </div>
-                    <div>
-                    {this.state.note.link}
-                    </div>
-                    <div>
-                    {this.state.note.body}
-                    </div>
-                    <Link to={`/Categories/${this.props.match.params.categoryId}/notes/${this.props.match.params.noteId}/edit`}><RaisedButton label="Edit" style={Style} /></Link>
+                        <div>
+                            <h2>
+                                {this.state.note.name}
+                            </h2>
+                        </div>
+                        <div>
+                            <b>Helpful Link:</b><a href={this.state.note.link}>{this.state.note.link}</a>
+                        </div>
+                        <div>
+                            {this.state.note.body}
+                        </div>
+                        <div>
+                            <Link to={`/Categories/${this.props.match.params.categoryId}/notes/${this.props.match.params.noteId}/edit`}><RaisedButton label="Edit" style={Style} /></Link>
+                            <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`} label="Back" style={Style} />
+                        </div>
                     </FormContainer>
-                    
+
                 </Container>
             </BodyContainer>
         );
