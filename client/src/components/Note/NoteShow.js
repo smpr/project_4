@@ -27,7 +27,7 @@ class NoteShow extends Component {
                             <h2>
                                 {this.state.note.name}
                             </h2>
-                        </div>
+                        </div> 
                         <div>
                             <b>Helpful Link:</b><a href={this.state.note.link}>{this.state.note.link}</a>
                         </div>
