@@ -18,7 +18,7 @@ class componentName extends Component {
     }
     // grabs all meetup id that the user clicked save that was then saved to the meetup model
     // also sets a new state so that the map will be able to make drop pins on the map 
-    async componentWillMount() {
+    async componentDidMount() {
         try {
             const meetId = this.props.match.params.meetId
             const meetup = await axios.get(`/api/meetups/${meetId}`)

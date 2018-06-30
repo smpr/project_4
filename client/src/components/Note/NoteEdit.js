@@ -9,7 +9,7 @@ class NoteEdit extends Component {
         note: {},
         redirectToWalkthrough: false
     }
-    async componentWillMount() {
+    async componentDidMount() {
         try {
             const catId = this.props.match.params.categoryId
             const noteId = this.props.match.params.noteId

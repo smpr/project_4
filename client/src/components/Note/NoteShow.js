@@ -7,7 +7,7 @@ class NoteShow extends Component {
     state = {
         note: {}
     }
-    async componentWillMount() {
+    async componentDidMount() {
         try {
             const catId = this.props.match.params.categoryId
             const noteId = this.props.match.params.noteId

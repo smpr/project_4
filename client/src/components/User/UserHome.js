@@ -17,7 +17,7 @@ class UserHome extends Component {
         },
         meetups: []
     }
-    async componentWillMount() {
+    async componentDidMount() {
         try {
             const info = await axios.get('/api/infos')
             const meetups = await axios.get('/api/meetups')

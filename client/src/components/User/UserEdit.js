@@ -17,7 +17,7 @@ class UserEdit extends Component {
         },
         redirectToInfoHome: false
     }
-    async componentWillMount() {
+    async componentDidMount() {
         try {
             const res = await axios.get('/api/infos')
             console.log(res.data)

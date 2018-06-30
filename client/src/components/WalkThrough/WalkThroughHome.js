@@ -12,7 +12,7 @@ class WalkThroughHome extends Component {
             name: ""
         }
     }
-    async componentWillMount() {
+    async componentDidMount() {
         try {
             const catId = this.props.match.params.categoryId
             const category = await axios.get(`/api/categories/${catId}`)

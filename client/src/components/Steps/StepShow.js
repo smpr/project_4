@@ -9,7 +9,7 @@ class StepShow extends Component {
     state = {
         step: {}
     }
-    async componentWillMount() {
+    async componentDidMount() {
         try {
             const catId = this.props.match.params.categoryId
             const walkId = this.props.match.params.walkthroughId

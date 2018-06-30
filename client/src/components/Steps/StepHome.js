@@ -15,7 +15,7 @@ class StepHome extends Component {
         meetups: [],
         category: {}
     }
-    async componentWillMount() {
+    async componentDidMount() {
         try {
 
             const catId = this.props.match.params.categoryId
