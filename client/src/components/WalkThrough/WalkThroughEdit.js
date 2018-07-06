@@ -27,11 +27,8 @@ class WalkthroughEdit extends Component {
         const walkId = this.props.match.params.walkthroughId
         const res = await axios.patch(`/api/categories/${catId}/walkthroughs/${walkId}`, {
             walkthrough: this.state.walkthrough,
-
-
         })
         this.setState({ walkthrough: res.data, redirectToWalkthrough: true })
-
     }
     handleChange = (event) => {
         const attribute = event.target.name
@@ -45,10 +42,7 @@ class WalkthroughEdit extends Component {
         await axios.delete(`/api/categories/${catId}/walkthroughs/${walkId}`)
         //redirect back to the user page after the id has been deleted
         this.setState({ redirectToWalkthrough: true })
-
     }
-
-
     render() {
         if (this.state.redirectToWalkthrough) {
             return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`} />
@@ -59,13 +53,10 @@ class WalkthroughEdit extends Component {
             <BodyContainer>
                 <Container>
                     <FormContainer>
-
                         <div>
                             <h2>Edit Walkthrough</h2>
                         </div>
-
                         <div>
-
                             <TextField
                                 hintText="Category Name"
                                 floatingLabelText="Walkthrough Title:"
@@ -74,11 +65,8 @@ class WalkthroughEdit extends Component {
                                 onChange={this.handleChange}
                                 name="name"
                                 type="text"
-
-
                                 value={this.state.walkthrough.name}
                             />
-
                         </div>
                         <div>
                             <TextField
@@ -89,14 +77,9 @@ class WalkthroughEdit extends Component {
                                 onChange={this.handleChange}
                                 name="body"
                                 type="text"
-
-
                                 value={this.state.walkthrough.body}
                             />
-
-
                         </div>
-
                         <div>
                             <RaisedButton onClick={this.deleteWalk} label="Delete" style={Style} />
                             <RaisedButton onClick={this.editWalk} label="Edit" style={Style} />

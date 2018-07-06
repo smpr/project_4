@@ -3,18 +3,13 @@ import { Redirect, Link } from 'react-router-dom'
 import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-
-
-
 class SignUpLogIn extends Component {
-
     state = {
         email: '',
         password: '',
         password_confirmation: '',
         redirectToCategoryPage: false
     }
-
     //devise function that allows the user thats already been create to sign in
     signIn = (event) => {
         event.preventDefault()
@@ -30,18 +25,14 @@ class SignUpLogIn extends Component {
         newState[event.target.name] = event.target.value
         this.setState(newState)
     }
-
     render() {
         if (this.state.redirectToCategoryPage) {
             return <Redirect to={`/Categories`} />
         }
-
         return (
             <BodyContainer>
                 <Container>
                     <FormContainer>
-
-
                         <form>
                             <div>
                                 <h2>Log In</h2>
@@ -56,7 +47,6 @@ class SignUpLogIn extends Component {
                                     name="email"
                                     type="text"
                                     required
-
                                     value={this.state.email}
                                 />
                                 {/* <label htmlFor="email">E-mail: </label>
@@ -72,7 +62,6 @@ class SignUpLogIn extends Component {
                                     name="password"
                                     type="password"
                                     required
-
                                     value={this.state.password}
                                 />
                                 {/* <label htmlFor="password">Password: </label>
@@ -82,7 +71,6 @@ class SignUpLogIn extends Component {
                                 <RaisedButton href={`/Users/Create`} label="Sign up" style={Style} />
                                 <RaisedButton onClick={this.signIn} label="Login" style={Style} />
                             </div>
-
                         </form>
                     </FormContainer>
                 </Container>

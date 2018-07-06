@@ -26,17 +26,12 @@ class UserEdit extends Component {
         } catch (error) {
             console.log(error)
         }
-
     }
     editInfo = async () => {
-
         const res = await axios.patch(`/api/infos/${this.state.info.id}`, {
             info: this.state.info
-
-
         })
         this.setState({ info: res.data, redirectToInfoHome: true })
-
     }
     handleChange = (event) => {
         const attribute = event.target.name
@@ -48,7 +43,6 @@ class UserEdit extends Component {
         event.preventDefault()
         await axios.post(`/api/infos`, { 'info': this.state.info })
         this.setState({ redirectToHome: true })
-
     }
     render() {
         if (this.state.redirectToInfoHome) {
@@ -61,7 +55,6 @@ class UserEdit extends Component {
                 <Container>
                     <FormContainer>
                         <h2>Edit User</h2>
-
                         <div>
                             <TextField
                                 hintText={this.state.info.address}
@@ -106,7 +99,6 @@ class UserEdit extends Component {
                                 value={this.state.info.zip}
                             />
                         </div>
-
                         <div>
                             <TextField
                                 hintText={this.state.info.country}
@@ -118,7 +110,6 @@ class UserEdit extends Component {
                                 value={this.state.info.country}
                             />
                         </div>
-
                         <div>
                             <RaisedButton onClick={this.editInfo} label="Edit" style={Style} />
                         </div>

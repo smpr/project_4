@@ -6,32 +6,27 @@ import { Redirect } from 'react-router-dom'
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 class NoteCreate extends Component {
-    state= {
+    state = {
         note: {
-            name:"",
-            body:"",
-            link:""
-
+            name: "",
+            body: "",
+            link: ""
         },
         redirectBack: false
-   }
-   handleChange = (event) => {
-    const updateNote = {
-        ...this.state.note
     }
-    updateNote[event.target.name] = event.target.value
-
-    this.setState({ note: updateNote})
-}
-handleSubmit = async (event) => {
-    event.preventDefault()
-    const catId = this.props.match.params.categoryId
-
-    await axios.post(`/api/categories/${catId}/notes`, { 'note': this.state.note})
-
-    this.setState({ redirectBack: true })
-
-}
+    handleChange = (event) => {
+        const updateNote = {
+            ...this.state.note
+        }
+        updateNote[event.target.name] = event.target.value
+        this.setState({ note: updateNote })
+    }
+    handleSubmit = async (event) => {
+        event.preventDefault()
+        const catId = this.props.match.params.categoryId
+        await axios.post(`/api/categories/${catId}/notes`, { 'note': this.state.note })
+        this.setState({ redirectBack: true })
+    }
     render() {
         if (this.state.redirectBack) {
             return <Redirect to={`/categories/${this.props.match.params.categoryId}/walkthroughs`} />
@@ -40,7 +35,7 @@ handleSubmit = async (event) => {
         }
         return (
             <BodyContainer>
-               <Container>
+                <Container>
                     <form>
                         <FormContainer>
                             <div>
@@ -56,11 +51,8 @@ handleSubmit = async (event) => {
                                         onChange={this.handleChange}
                                         name="name"
                                         type="text"
-                                        
-
                                         value={this.state.note.name}
                                     />
-
                                 </div>
                                 <div>
                                     <TextField
@@ -72,10 +64,8 @@ handleSubmit = async (event) => {
                                         name="body"
                                         type="text"
                                         required
-
                                         value={this.state.note.body}
                                     />
-
                                 </div>
                                 <div>
                                     <TextField
@@ -87,10 +77,8 @@ handleSubmit = async (event) => {
                                         name="link"
                                         type="text"
                                         required
-
                                         value={this.state.note.link}
                                     />
-
                                 </div>
                                 <div>
                                     <RaisedButton onClick={this.handleSubmit} label="Submit" style={Style} />

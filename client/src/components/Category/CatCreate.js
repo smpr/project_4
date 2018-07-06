@@ -12,8 +12,6 @@ class CatCreate extends Component {
         ],
         redirectToHome: false,
     }
-
-
     handleChange = (event) => {
         const updateCategory = {
             ...this.state.category
@@ -29,7 +27,6 @@ class CatCreate extends Component {
 
     }
     render() {
-
         if (this.state.redirectToHome) {
             return <Redirect to="/categories" />
         } else if (!localStorage['access-token']) {
@@ -54,10 +51,8 @@ class CatCreate extends Component {
                                         name="title"
                                         type="text"
                                         required
-
                                         value={this.state.category.title}
                                     />
-
                                 </div>
                                 <div>
                                     <RaisedButton onClick={this.handleSubmit} label="Create Category" style={Style} />

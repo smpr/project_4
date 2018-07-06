@@ -21,16 +21,12 @@ class WalkThroughHome extends Component {
             const notes = await axios.get(`/api/categories/${catId}/notes`)
             const searcher = this.state.category.title
             const meetups = await axios.get(`/api/meetupapi/${searcher}`)
-
             console.log(meetups.data)
             this.setState({ meetups: meetups.data, walkthroughs: walks.data, notes: notes.data })
-
         } catch (error) {
             console.log(error)
         }
-
     }
-
     async handleSubmit(index) {
         try {
             const id = index
@@ -41,7 +37,6 @@ class WalkThroughHome extends Component {
             console.log(error)
         }
     }
-
     render() {
         if (!localStorage['access-token']) {
             return <Redirect to='/' />
@@ -60,7 +55,6 @@ class WalkThroughHome extends Component {
                                     return (
                                         <div><Link key={walkthrough._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${walkthrough.id}/steps`}><b>{walkthrough.name}</b>
                                         </Link></div>
-
                                     )
                                 })}
                             </div>
@@ -72,14 +66,14 @@ class WalkThroughHome extends Component {
                                 <h2>Notes:</h2>
                             </div>
                             <div>
-                            <Link to={`/Categories/${this.props.match.params.categoryId}/Notes/Create`}><RaisedButton label="Create Note" style={Style} /></Link>
-                                {this.state.notes.map((note, index) =>{
-                                return (
-                                    <div>
-                                        <Link key={note._id} to={`/Categories/${this.props.match.params.categoryId}/Notes/${note.id}/Show`}><b>{note.name}</b>
-                                        </Link>
-                                    </div>
-                                        )
+                                <Link to={`/Categories/${this.props.match.params.categoryId}/Notes/Create`}><RaisedButton label="Create Note" style={Style} /></Link>
+                                {this.state.notes.map((note, index) => {
+                                    return (
+                                        <div>
+                                            <Link key={note._id} to={`/Categories/${this.props.match.params.categoryId}/Notes/${note.id}/Show`}><b>{note.name}</b>
+                                            </Link>
+                                        </div>
+                                    )
                                 })}
                             </div>
                         </div>
@@ -94,7 +88,6 @@ class WalkThroughHome extends Component {
                                     <LinkDiv><div><a href={meetup.link}>{meetup.name}</a></div><div><button value={index} onClick={() => this.handleSubmit(index)}>SAVE</button></div></LinkDiv>
                                 )
                             })}</div></div>
-
                     </FormContainer>
                 </Container>
             </BodyContainer>

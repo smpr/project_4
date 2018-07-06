@@ -3,8 +3,6 @@ import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
 import { Container, FormContainer, BodyContainer, ListDiv, Style } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
-
-
 class CatHome extends Component {
     state = {
         categories: [],
@@ -20,7 +18,6 @@ class CatHome extends Component {
         } catch (error) {
             console.log(error)
         }
-
     }
     render() {
         if (!localStorage['access-token']) {
@@ -55,7 +52,6 @@ class CatHome extends Component {
                         </ListDiv>
                     </FormContainer>
                 </Container>
-
             </BodyContainer>
         );
     }

@@ -17,11 +17,9 @@ class StepShow extends Component {
             const steps = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}/steps/${stepId}`)
             console.log(steps.data)
             this.setState({ step: steps.data })
-
         } catch (error) {
             console.log(error)
         }
-
     }
     render() {
         if (!localStorage['access-token']) {
@@ -30,7 +28,6 @@ class StepShow extends Component {
         return (
             <BodyContainer>
                 <Container>
-
                     <FormContainer>
                         <div>
                             <h3>Step:</h3> {this.state.step.title}
@@ -40,7 +37,6 @@ class StepShow extends Component {
                             <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps`} label="Back" style={Style} />
                         </div>
                     </FormContainer>
-
                 </Container>
                 <Container>
                     <FormContainer>
@@ -48,7 +44,6 @@ class StepShow extends Component {
                             <h3>Description:</h3>{this.state.step.body}
                         </div>
                     </FormContainer>
-
                 </Container>
             </BodyContainer>
         );

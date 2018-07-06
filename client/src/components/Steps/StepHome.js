@@ -10,14 +10,12 @@ class StepHome extends Component {
         steps: [{
             title: '',
             body: ''
-
         }],
         meetups: [],
         category: {}
     }
     async componentDidMount() {
         try {
-
             const catId = this.props.match.params.categoryId
             const walkId = this.props.match.params.walkthroughId
             const category = await axios.get(`/api/categories/${catId}`)
@@ -25,14 +23,10 @@ class StepHome extends Component {
             const info = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}`)
             const steps = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}/steps`)
             this.setState({ info: info.data, category: category.data, steps: steps.data })
-
-
         } catch (error) {
             console.log(error)
         }
-
     }
-
     render() {
         if (this.props.signedIn) {
             return <Redirect to={`/signup`} />
@@ -45,13 +39,11 @@ class StepHome extends Component {
                     <FormContainer>
                         <div><h2>{this.state.info.name}</h2></div>
                         <div><b>Description:</b> {this.state.info.body}</div>
-
                         <div>
                             <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/edit`} label="Edit" style={Style} />
                             <RaisedButton href={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`} label="Back" style={Style} />
                         </div>
                     </FormContainer>
-
                 </Container>
                 <Container>
                     <FormContainer>
@@ -67,15 +59,12 @@ class StepHome extends Component {
                                     return (
                                         <li><Link key={step._id} to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs/${this.props.match.params.walkthroughId}/steps/${step.id}/show`}>{step.title}
                                         </Link></li>
-
                                     )
                                 })}
-
                             </ol>
                         </div>
                     </FormContainer>
                 </Container>
-
             </BodyContainer>
         );
     }

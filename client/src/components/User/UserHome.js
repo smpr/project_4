@@ -25,7 +25,6 @@ class UserHome extends Component {
         } catch (error) {
             console.log(error)
         }
-
     }
     //run a function that will sort by date then delete the ones that have passed already based on todays time date. only delete the day after
     //grab the date of the event + 1 day
@@ -43,12 +42,10 @@ class UserHome extends Component {
     //display it in a new state
 
     //save the update to the object
-
     render() {
         if (!localStorage['access-token']) {
             return <Redirect to='/' />
         }
-
         return (
             <BodyContainer>
                 <Container>
@@ -60,7 +57,6 @@ class UserHome extends Component {
                             State: {this.state.info.state}<br />
                             Country: {this.state.info.country}<br />
                             Zip: {this.state.info.zip}<br />
-
                             <div><RaisedButton href='/Users/edit' label="Edit" style={Style} /></div>
                         </div>
                     </FormContainer>
@@ -75,7 +71,6 @@ class UserHome extends Component {
                                 return (
                                     <div><Link key={meetup._id} to={`/Users/Meetups/${meetup.id}/MeetupDetails`}><b>{meetup.name}</b>
                                     </Link></div>
-
                                 )
                             })}
                         </div>

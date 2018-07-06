@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom'
 import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-
 class StepCreate extends Component {
     state = {
         step: {},
@@ -18,15 +17,12 @@ class StepCreate extends Component {
 
         this.setState({ step: updateStep })
     }
-
     handleSubmit = async (event) => {
         event.preventDefault()
         const catId = this.props.match.params.categoryId
         const walkId = this.props.match.params.walkthroughId
         await axios.post(`/api/categories/${catId}/walkthroughs/${walkId}/steps`, { 'step': this.state.step })
-
         this.setState({ redirectToWalkthroughs: true })
-
     }
     render() {
         if (this.state.redirectToWalkthroughs) {
@@ -37,7 +33,6 @@ class StepCreate extends Component {
         return (
             <BodyContainer>
                 <Container>
-
                     <form>
                         <FormContainer>
                             <div><h2>New Step</h2></div>
@@ -51,7 +46,6 @@ class StepCreate extends Component {
                                     name="title"
                                     type="text"
                                     required
-
                                     value={this.state.step.title}
                                 />
                             </div>
@@ -65,18 +59,14 @@ class StepCreate extends Component {
                                     name="body"
                                     type="text"
                                     required
-
                                     value={this.state.step.body}
                                 />
-
                             </div>
-
                             <div>
                                 <RaisedButton onClick={this.handleSubmit} label="Submit" style={Style} />
                             </div>
                         </FormContainer>
                     </form>
-
                 </Container>
             </BodyContainer>
         );

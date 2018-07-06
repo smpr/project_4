@@ -144,13 +144,10 @@ class App extends Component {
       <MuiThemeProvider>
         <Router>
           <div>
-
             <Nav
               signOut={this.signOut}
             />
-
             <Switch>
-
               <Route exact path="/" render={SignUpLogInComponent} />
 
               <Route exact path="/signup" render={SignUpLogInComponent} />

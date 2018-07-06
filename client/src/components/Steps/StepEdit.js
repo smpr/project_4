@@ -23,11 +23,9 @@ class StepEdit extends Component {
             const step = await axios.get(`/api/categories/${catId}/walkthroughs/${walkId}/steps/${stepId}`)
             console.log(stepId)
             this.setState({ step: step.data })
-
         } catch (error) {
             console.log(error)
         }
-
     }
     editStep = async () => {
         const catId = this.props.match.params.categoryId
@@ -35,11 +33,8 @@ class StepEdit extends Component {
         const stepId = this.props.match.params.stepId
         const res = await axios.patch(`/api/categories/${catId}/walkthroughs/${walkId}/steps/${stepId}`, {
             step: this.state.step,
-
-
         })
         this.setState({ step: res.data, redirectToSteps: true })
-
     }
     handleChange = (event) => {
         const attribute = event.target.name
@@ -54,7 +49,6 @@ class StepEdit extends Component {
         await axios.delete(`/api/categories/${catId}/walkthroughs/${walkId}/steps/${stepId}`)
         //redirect back to the user page after the id has been deleted
         this.setState({ redirectToWalkthrough: true })
-
     }
     render() {
         if (this.state.redirectToSteps) {
@@ -79,11 +73,8 @@ class StepEdit extends Component {
                                 onChange={this.handleChange}
                                 name="title"
                                 type="text"
-
-
                                 value={this.state.step.title}
                             />
-
                             <div>
                                 <TextField
                                     hintText="Description"
@@ -93,12 +84,9 @@ class StepEdit extends Component {
                                     onChange={this.handleChange}
                                     name="body"
                                     type="text"
-
-
                                     value={this.state.step.body}
                                 />
                             </div>
-
                             <RaisedButton onClick={this.deleteStep} label="Delete" style={Style} />
                             <RaisedButton onClick={this.editStep} label="Edit" style={Style} />
                         </div>

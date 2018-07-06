@@ -26,12 +26,10 @@ class componentName extends Component {
             this.state.mapsInfo.name = this.state.meetup.name
             this.state.mapsInfo.lon = this.state.meetup.lon
             this.state.mapsInfo.lat = this.state.meetup.lat
-
             console.log(this.state.mapsInfo)
         } catch (error) {
             console.log(error)
         }
-
     }
     //allows user to delete this meetup
     deleteMeetup = async () => {
@@ -39,9 +37,7 @@ class componentName extends Component {
         await axios.delete(`/api/meetups/${meetId}`)
         //redirect back to the user page after the id has been deleted
         this.setState({ redirectToUserHome: true })
-
     }
-
     render() {
         if (this.state.redirectToUserHome) {
             return <Redirect to={`/Users/Home`} />
@@ -53,7 +49,6 @@ class componentName extends Component {
                 <Container>
                     <FormContainer>
                         <div>
-
                             <div><h2>Group:</h2> {this.state.meetup.name}</div>
                             <div><h3>City: </h3> {this.state.meetup.city}</div>
                             <div><h3>Description: </h3> {this.state.meetup.description}</div>

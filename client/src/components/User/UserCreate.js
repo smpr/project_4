@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom'
 import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../StyledComponents/DefaultStyle"
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-
 class UserCreate extends Component {
     state = {
         info: {
@@ -25,7 +24,6 @@ class UserCreate extends Component {
         togglePage6: false,
         toggleConirm: false,
     }
-
     async componentWillMount() {
         try {
             const res = await axios.get('/api/infos')
@@ -34,29 +32,24 @@ class UserCreate extends Component {
         } catch (error) {
             console.log(error)
         }
-
     }
     promptToSecondForm = (event) => {
         this.setState({
             togglePage2: true
         })
-
     }
     promptToThirdForm = (event) => {
         this.setState({
             togglePage2: false,
             togglePage3: true
         })
-
     }
     promptToFourthForm = (event) => {
         this.setState({
             togglePage3: false,
             togglePage4: true
         })
-
     }
-
     handleChange = (event) => {
         const attribute = event.target.name
         const clonedInfo = { ...this.state.info }
@@ -68,7 +61,6 @@ class UserCreate extends Component {
         await axios.post(`/api/infos`, this.state.info)
         this.setState({ togglePage4: false, togglePage6: true })
         console.log("submit hit")
-
     }
     signUp = (event) => {
         event.preventDefault()
@@ -81,7 +73,6 @@ class UserCreate extends Component {
                 togglePage2: true
             })
     }
-
     render() {
         if (!localStorage['access-token']) {
             return <Redirect to='/' />
@@ -103,10 +94,8 @@ class UserCreate extends Component {
                                 name="email"
                                 type="text"
                                 required
-
                                 value={this.state.info.email}
                             />
-
                         </div>
                         <div>
                             <TextField
@@ -118,10 +107,8 @@ class UserCreate extends Component {
                                 name="password"
                                 type="password"
                                 required
-
                                 value={this.state.info.password}
                             />
-
                         </div>
                         <div>
                             <TextField
@@ -133,10 +120,8 @@ class UserCreate extends Component {
                                 name="password_confirmation"
                                 type="password"
                                 required
-
                                 value={this.state.info.password_confirmation}
                             />
-
                         </div>
                         <div>
                             <RaisedButton onClick={this.signUp} label="Next" style={Style} />
@@ -158,10 +143,8 @@ class UserCreate extends Component {
                                 name="address"
                                 type="text"
                                 required
-
                                 value={this.state.info.address}
                             />
-
                         </div>
                         <div>
                             <TextField
@@ -173,10 +156,8 @@ class UserCreate extends Component {
                                 name="zip"
                                 type="number"
                                 required
-
                                 value={this.state.info.zip}
                             />
-
                         </div>
                         <div>
                             <RaisedButton onClick={this.promptToThirdForm} label="Next" style={Style} />
@@ -198,10 +179,8 @@ class UserCreate extends Component {
                                 name="city"
                                 type="text"
                                 required
-
                                 value={this.state.info.city}
                             />
-
                         </div>
                         <div>
                             <TextField
@@ -213,12 +192,9 @@ class UserCreate extends Component {
                                 name="state"
                                 type="text"
                                 required
-
                                 value={this.state.info.state}
                             />
-
                         </div>
-
                         <div>
                             <TextField
                                 hintText="Country"
@@ -229,10 +205,8 @@ class UserCreate extends Component {
                                 name="country"
                                 type="text"
                                 required
-
                                 value={this.state.info.country}
                             />
-
                         </div>
                         <div>
                             <RaisedButton onClick={this.promptToFourthForm} label="Next" style={Style} />
@@ -271,13 +245,8 @@ class UserCreate extends Component {
                     </FormContainer>
                 </Container>
             </BodyContainer>
-
         const moveAlong =
-
             <Redirect to={`/Categories`} />
-
-
-
         if (this.state.redirectToInfoHome) {
             return <Redirect to={`/Users/Home`} />
         }
@@ -287,14 +256,11 @@ class UserCreate extends Component {
                     : this.state.togglePage4 ? page4
                         : this.state.togglePage6 ? moveAlong
                             : page1
-
         return (
             <div>
-
                 {userView}
             </div>
         );
-
     }
 }
 

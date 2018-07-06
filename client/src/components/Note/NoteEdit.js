@@ -23,14 +23,10 @@ class NoteEdit extends Component {
     editNote = async () => {
         const catId = this.props.match.params.categoryId
         const noteId = this.props.match.params.noteId
-
         const res = await axios.patch(`/api/categories/${catId}/notes/${noteId}`, {
             note: this.state.note,
-
-
         })
         this.setState({ step: res.data, redirectToSteps: true })
-
     }
     handleChange = (event) => {
         const attribute = event.target.name
@@ -41,21 +37,17 @@ class NoteEdit extends Component {
     deleteNote = async () => {
         const catId = this.props.match.params.categoryId
         const noteId = this.props.match.params.noteId
-
         await axios.delete(`/api/categories/${catId}/notes/${noteId}`)
-
         this.setState({ redirectToWalkthrough: true })
-
     }
     render() {
         if (this.state.redirectToWalkthrough) {
             return <Redirect to={`/Categories/${this.props.match.params.categoryId}/WalkThroughs`} />
         }
-
         return (
             <BodyContainer>
                 <Container>
-                <FormContainer>
+                    <FormContainer>
                         <div>
                             <br />
                             <h2><b>Edit Note</b></h2>
@@ -68,11 +60,8 @@ class NoteEdit extends Component {
                                 onChange={this.handleChange}
                                 name="name"
                                 type="text"
-
-
                                 value={this.state.note.name}
                             />
-
                             <div>
                                 <TextField
                                     hintText="Body"
@@ -82,8 +71,6 @@ class NoteEdit extends Component {
                                     onChange={this.handleChange}
                                     name="body"
                                     type="text"
-
-
                                     value={this.state.note.body}
                                 />
                             </div>
@@ -96,12 +83,9 @@ class NoteEdit extends Component {
                                     onChange={this.handleChange}
                                     name="link"
                                     type="text"
-
-
                                     value={this.state.note.link}
                                 />
                             </div>
-
                             <RaisedButton onClick={this.deleteNote} label="Delete" style={Style} />
                             <RaisedButton onClick={this.editNote} label="Edit" style={Style} />
                         </div>
