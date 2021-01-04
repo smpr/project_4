@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "google-maps-react": "^1.1.2",
     "material-ui": "^0.19.4",
     "meetup-api": "^1.4.28",
